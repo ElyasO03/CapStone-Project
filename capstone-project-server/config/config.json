@@ -1,10 +1,10 @@
 {
   "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "duiqiywk",
+    "password": "56ayhQLXTNqVc79HBD7I0NDTYKm-ZXdf",
+    "database": "duiqiywk",
+    "host": "chunee.db.elephantsql.com",
+    "dialect": "postgres"
   },
   "test": {
     "username": "root",
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+    "username": "duiqiywk",
+    "password": "56ayhQLXTNqVc79HBD7I0NDTYKm-ZXdf",
+    "database": "duiqiywk",
+    "host": "chunee.db.elephantsql.com",
+    "dialect": "postgres"
   }
 }
