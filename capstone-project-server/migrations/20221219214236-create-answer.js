@@ -16,7 +16,7 @@ module.exports = {
         type: Sequelize.BOOLEAN
       },
       questionId: {
-        type: Sequelize.INTEGER, references: {model: 'Question', key: 'id'}
+        type: Sequelize.INTEGER, references: {model: 'Questions', key: 'id'}
       },
       createdAt: {
         allowNull: false,
