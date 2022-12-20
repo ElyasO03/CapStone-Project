@@ -15,7 +15,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Question.init({
-    Questions: DataTypes.STRING
+    Questions: DataTypes.STRING,
+    level: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Question',
