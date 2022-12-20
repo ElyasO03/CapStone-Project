@@ -75,22 +75,52 @@ app.post('/teacher-question-post', async (req, res) => {
     
 // })
 
-// app.get ('/get-teacher-question', async (req,res) => {
+app.get ('/get-teacher-question', async (req,res) => {
     
-//     const username = req.username 
-//     const userId = req.id
+
+    const username = req.username 
+    const userId = req.id
+    let questionSet = []
+    let obj = {}
+    // let answersArray = []
     
-//     let teacher_question = await models.Questions.findAll({})
-//     let teacher_answers =await models.Answers.findAll({})
-//     for (let choice of teacher_question) {
-//         let filteredAnswers = teacher_answers.filter(q => q.questionId == choice.id)
-//         choice.choice = filteredAnswers
-//     }
-//     res.json({Questions:teacher_question})  
-// })
+    let teacher_question = await models.Question.findAll()
+    
+    let teacher_answers = await models.Answer.findAll()
+    console.log(teacher_answers)
+    teacher_question.forEach(choice => {
+        let filteredAnswers = teacher_answers.filter(q => q.questionId == choice.id)
+        obj.question = choice.Questions
+        obj.answers = filteredAnswers
+        questionSet.push(obj)
+    });
+ 
+  
+
+    // for (let choice of teacher_question) {
+    //     let filteredAnswers = teacher_answers.filter(q => q.dataValues.questionId == choice.id) 
+    //     // console.log(filteredAnswers)
+    //     obj.question = choice.Questions
+    //     obj.answers = filteredAnswers
+    //     questionSet.push(obj)
+
+    //      //    console.log(questionSet)
+        
+            
+    //     // choice.choice = filteredAnswers
+    // }
+   
+    res.json(questionSet)  
+})
 
 
-
+//   obj.question = q.Questions
+            // //   obj.answers = [...obj.answers, choice.choice, choice.is_true]
+            // answersArray.push(choice.choice, choice.is_true)
+            // console.log(choice.choice)
+            // //   console.log(obj)
+            //   questionSet.push(obj)
+            //  return questionSet 
 
 
 
