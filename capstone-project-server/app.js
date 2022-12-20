@@ -26,6 +26,7 @@ app.post('/register', async (req, res) => {
 
 app.post('/teacher-question-post', async (req, res) => {
     const { Questions, level, UserID } = req.body
+    const { choice1, choice2, choice3, choice4, questionId } = req.body
 
     const questionTeacher = await models.Question.build ({
         Questions:Questions, level:level, UserID: UserID 
@@ -33,23 +34,46 @@ app.post('/teacher-question-post', async (req, res) => {
 
     let upload_teacher_question = await questionTeacher.save()
 
-    console.log(upload_teacher_question)
+    console.log(upload_teacher_question.dataValues.id)
+    const answerTeacher = await models.Answer.bulkCreate ([
+        {choice:choice1[0], is_true:choice1[1], questionId: upload_teacher_question.dataValues.id},
+        {choice:choice2[0], is_true:choice2[1], questionId: upload_teacher_question.dataValues.id},
+        {choice:choice3[0], is_true:choice3[1], questionId: upload_teacher_question.dataValues.id},
+        {choice:choice4[0], is_true:choice4[1], questionId: upload_teacher_question.dataValues.id} 
+    ])
+
+    // let upload_teacher_answer = await answerTeacher.save()
     res.json({success:'Successfully post questions'})  
 })
 
-app.post('/teacher-answer-post', async (req, res) => {
-    const { choice, is_true, questionId } = req.body
+// const answerTeacher = await models.Answer.build ({
+//     choice:choice1[0], is_true:choice1[1], questionId: upload_teacher_question.dataValues.id,
+//     choice:choice2[0], is_true:choice2[1], questionId: upload_teacher_question.dataValues.id,
+//     choice:choice3[0], is_true:choice3[1], questionId: upload_teacher_question.dataValues.id,
+//     choice:choice4[0], is_true:choice4[1], questionId: upload_teacher_question.dataValues.id 
+// })
 
-    const answerTeacher = await models.Answer.build ({
-        choice:choice, is_true:is_true, questionId: questionId 
-    })
+// let upload_teacher_answer = await answerTeacher.save()
 
-    let upload_teacher_answer = await answerTeacher.save()
 
-    console.log(upload_teacher_answer)
-    res.json({success:'Successfully posted answers'})  
+
+// app.post('/teacher-answer-post', async (req, res) => {
+//     const { choice1, choice2, choice3, choice4, questionId } = req.body
+
+
+//     const answerTeacher = await models.Answer.build ({
+//         choice:choice1[0], is_true:choice1[1], questionId: upload_teacher_question.dataValues.id,
+//         choice:choice2[0], is_true:choice2[1], questionId: upload_teacher_question.dataValues.id,
+//         choice:choice3[0], is_true:choice3[1], questionId: upload_teacher_question.dataValues.id,
+//         choice:choice4[0], is_true:choice4[1], questionId: upload_teacher_question.dataValues.id 
+//     })
+
+//     let upload_teacher_answer = await answerTeacher.save()
+
+//     console.log(upload_teacher_answer)
+//     res.json({success:'Successfully posted answers'})  
     
-})
+// })
 
 // app.get ('/get-teacher-question', async (req,res) => {
     
