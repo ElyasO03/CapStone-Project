@@ -94,14 +94,6 @@ app.post('/teacher-question-post', async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
 app.listen(8080,() => {
     console.log("Let's get ready to rumble!")
 })
