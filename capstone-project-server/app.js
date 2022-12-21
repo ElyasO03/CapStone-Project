@@ -89,7 +89,7 @@ app.get ('/get-teacher-question', async (req,res) => {
     
     teacher_question.forEach(question => {
         let filteredArr = teacher_answers.filter(answer => answer.questionId == question.id)
-        answersArray.push({question: question.Questions, id:question.id, answers:filteredArr})
+        answersArray.push({question: question.Questions, level:question.level, id:question.id, answers:filteredArr})
         // obj.question = choice.Questions
         // obj.answers = filteredAnswers
         // questionSet.push(obj)
