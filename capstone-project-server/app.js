@@ -106,20 +106,22 @@ app.get ('/get-teacher-question', async (req,res) => {
 
     const username = req.username 
     const userId = req.id
-    let questionSet = []
-    let obj = {}
-    // let answersArray = []
+    // let questionSet = []
+    // let obj = {}
+    let answersArray = []
     
-    let teacher_question = await models.Question.findAll()
+    let teacher_question = await models.Question.findAll({})
     
-    let teacher_answers = await models.Answer.findAll()
-    console.log(teacher_answers)
-    teacher_question.forEach(choice => {
-        let filteredAnswers = teacher_answers.filter(q => q.questionId == choice.id)
-        obj.question = choice.Questions
-        obj.answers = filteredAnswers
-        questionSet.push(obj)
+    let teacher_answers = await models.Answer.findAll({})
+    
+    teacher_question.forEach(question => {
+        let filteredArr = teacher_answers.filter(answer => answer.questionId == question.id)
+        answersArray.push({question: question.Questions, id:question.id, answers:filteredArr})
+        // obj.question = choice.Questions
+        // obj.answers = filteredAnswers
+        // questionSet.push(obj)
     });
+    res.json(answersArray)
  
   
 
@@ -136,7 +138,7 @@ app.get ('/get-teacher-question', async (req,res) => {
     //     // choice.choice = filteredAnswers
     // }
    
-    res.json(questionSet)  
+ 
 })
 
 
