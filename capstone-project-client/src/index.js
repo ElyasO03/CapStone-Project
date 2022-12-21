@@ -9,6 +9,8 @@ import { createStore } from 'redux'
 import reducer from './store/reducer';
 import LoginS from './components/LoginS';
 import RegisterS from './components/RegisterS';
+import TeacherPost from './components/TeacherPost';
+import Baselayout from './components/Baselayout';
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
@@ -22,11 +24,14 @@ root.render(
   <React.StrictMode>
     <Provider store = {store}>
       <BrowserRouter>
+      <Baselayout >
       <Routes>
         <Route path = '/' element= { <App />} />
         <Route path = '/login' element= {<LoginS />} />
         <Route path = '/register' element= {<RegisterS />} />
+        <Route path = '/teacher-post' element ={<TeacherPost/>} />
       </Routes>
+      </Baselayout>
     </BrowserRouter>
     </Provider>
   </React.StrictMode>

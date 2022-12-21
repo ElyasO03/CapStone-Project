@@ -32,9 +32,11 @@ function LoginS(props) {
                         const token = result.token
                         const email = result.email
                         const Role = result.Role
+                        // const id = result.id
                         localStorage.setItem('jwt', token)
                         localStorage.setItem('email', email)
                         localStorage.setItem('Role', Role)
+                        // localStorage.setItem('id', id)
 
                         props.onLogin(token)
 
