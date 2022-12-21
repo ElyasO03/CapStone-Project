@@ -1,9 +1,10 @@
 import './App.css';
+import Quiz from './components/Quiz';
 
 function App() {
   return (
     <div>
-      <h1>Succesful</h1>
+      <Quiz />
     </div>
   );
 }
