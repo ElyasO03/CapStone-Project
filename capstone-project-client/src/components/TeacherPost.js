@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom'
 function TeacherPost() {  
     const [user, setUser] = useState({})
     const navigate = useNavigate()
+    const id = localStorage.getItem('id')
 
    
     const handleChange = (e) => {
@@ -18,7 +19,7 @@ function TeacherPost() {
    
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch('http://localhost:8080/teacher-question-post', {
+        fetch(`http://localhost:8080/teacher-question-post/${id}`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
