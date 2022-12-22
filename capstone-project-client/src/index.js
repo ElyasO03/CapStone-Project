@@ -14,6 +14,7 @@ import Baselayout from './components/Baselayout';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProtectedRoute from './components/ProtectedRoute';
 import Signout from './components/Signout';
+import Quiz from './components/Quiz';
 
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
@@ -30,11 +31,13 @@ root.render(
       <BrowserRouter>
       <Baselayout >
       <Routes>
-        <Route path = '/' element= { <App />} />
+        <Route path = '/:id' element= { <App />} />
         <Route path = '/login' element= {<LoginS />} />
         <Route path = '/register' element= {<RegisterS />} />
-        <Route path = '/teacher-post' element ={<ProtectedRoute><TeacherPost/></ProtectedRoute>} />
+        <Route path = '/teacher-post/:id' element ={<ProtectedRoute><TeacherPost/></ProtectedRoute>} />
         <Route path = '/signout' element = {<Signout/>} />
+        <Route path = '/quiz' element = {<Quiz />} />
+
       </Routes>
       </Baselayout>
     </BrowserRouter>

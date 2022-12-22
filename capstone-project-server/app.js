@@ -42,7 +42,7 @@ app.post('/login', async (req, res) => {
         const result = await bcrypt.compare(password, user.password)
         if (result) {
             const token = jwt.sign({email: user.email}, "QuizAppSuperSecretKey")
-            res.json({ success: true, token: token, email: user.email, Role: user.Role})
+            res.json({ success: true, token: token, email: user.email, Role: user.Role, id: user.id, username: user.username })
         } else {
             res.json({ success: false, message: 'Username or password is incorrect.' })
 
@@ -50,12 +50,14 @@ app.post('/login', async (req, res) => {
     } else {res.json({success: false, message: 'This user Does Not Exist Please register!'})}
 })
 
-app.post('/teacher-question-post', async (req, res) => {
+app.post('/teacher-question-post/:id', async (req, res) => {
+    let {id} = req.params
+
     const { Questions, level, UserID } = req.body
     const { choice1, choice2, choice3, choice4, questionId } = req.body
 
     const questionTeacher = await models.Question.build ({
-        Questions:Questions, level:level, UserID: UserID 
+        Questions:Questions, level:level, UserID: parseInt(id), 
     })
 
     let upload_teacher_question = await questionTeacher.save()
