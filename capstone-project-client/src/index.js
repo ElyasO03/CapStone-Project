@@ -11,6 +11,7 @@ import LoginS from './components/LoginS';
 import RegisterS from './components/RegisterS';
 import TeacherPost from './components/TeacherPost';
 import Baselayout from './components/Baselayout';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
