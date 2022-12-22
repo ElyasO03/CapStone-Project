@@ -132,7 +132,7 @@ const restartGame = () => {
                     <div className="final-results">
                         <h1>Final Results</h1>
                         <h2> {score} out of {easyQuestions.length} correct - ({(score/easyQuestions.length) * 100}%)</h2>
-                        <button onClick={() => restartGame()}>Resart Game</button>
+                        <button onClick={() => restartGame()}>Restart Game</button>
                     </div>
                 ) : (
                     <div className="question-card">
