@@ -32,13 +32,16 @@ function LoginS(props) {
                         const token = result.token
                         const email = result.email
                         const Role = result.Role
+                        const username = result.username
                         // const id = result.id
                         localStorage.setItem('jwt', token)
                         localStorage.setItem('email', email)
                         localStorage.setItem('Role', Role)
+                        localStorage.setItem('user', username)
                         // localStorage.setItem('id', id)
 
                         props.onLogin(token)
+                        props.onRole(Role)
 
                         navigate('/')
                     } else {
@@ -68,7 +71,9 @@ function LoginS(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (token) => dispatch({type: 'ON_LOGIN', payload: token})
+        onLogin: (token) => dispatch({type: 'ON_LOGIN', payload: token}),
+        onRole:(Role) => dispatch({type: 'ON_ROLE',  payload:Role})
+        
     }
 }
 
