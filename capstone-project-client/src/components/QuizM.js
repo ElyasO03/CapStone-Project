@@ -7,12 +7,6 @@ function QuizM() {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [score, setScore] = useState(0);
 
-      
-          
-        
-  
-                                                          
-    
 
     const mediumQuestions = [
         {
