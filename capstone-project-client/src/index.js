@@ -11,6 +11,8 @@ import LoginS from './components/LoginS';
 import RegisterS from './components/RegisterS';
 import TeacherPost from './components/TeacherPost';
 import Baselayout from './components/Baselayout';
+import ProtectedRoute from './components/ProtectedRoute';
+import Signout from './components/Signout';
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
@@ -29,7 +31,8 @@ root.render(
         <Route path = '/' element= { <App />} />
         <Route path = '/login' element= {<LoginS />} />
         <Route path = '/register' element= {<RegisterS />} />
-        <Route path = '/teacher-post' element ={<TeacherPost/>} />
+        <Route path = '/teacher-post' element ={<ProtectedRoute><TeacherPost/></ProtectedRoute>} />
+        <Route path = '/signout' element = {<Signout/>} />
       </Routes>
       </Baselayout>
     </BrowserRouter>

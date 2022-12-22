@@ -1,8 +1,9 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
+import { connect } from 'react-redux'
 
 
-function RegisterS() {
+function RegisterS(props) {
 
     const navigate = useNavigate()
     const [user, setUser] = useState([])
@@ -60,4 +61,13 @@ function RegisterS() {
     )
 }
 
-export default RegisterS
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onReg: (username) => dispatch({type: 'ON_REG', payload: username}),
+        
+        
+    }
+}
+
+
+export default connect(null, mapDispatchToProps)(RegisterS)
