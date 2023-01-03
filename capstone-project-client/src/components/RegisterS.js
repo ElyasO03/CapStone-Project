@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { connect } from 'react-redux'
+import './RegisterS.css'
 
 
 function RegisterS(props) {
@@ -43,20 +44,32 @@ function RegisterS(props) {
 
     return (
         <>
+    <div className='body'>
+        <div className='box'>
+            <div className='form'>
         <h2>Register</h2>
-        <input onChange={handleChange} minLength={4} maxLength={16} type='text' name='username' />
-        <span>Username</span>
+        <div className='inputBox'>
+        <input minLength={4} maxLength={16} onChange={handleChange} type='text' name='username' />
+        <span>Enter A Username</span>
         <i></i>
-        <input onChange={handleChange} type='text' name='email' />
-        <span>Email</span>
-        <i></i>
-        <input onChange={handleChange} minLength={4} maxLength={16} type='password' name='password' />
+        </div>
+        <div className='inputBox'>
+        <input minLength={4} maxLength={16} onChange={handleChange} type='password' name='password' />
         <span>Password</span>
         <i></i>
-        <input onChange={handleChange} type='text' name='Role' />
+        </div>
+        <div className='inputBox'>
+        <input minLength={7} maxLength={7} onChange={handleChange} type='text' name='Role' />
         <span>Role</span>
         <i></i>
-        <button onClick={handleSubmit}>Register</button>
+        </div>
+        <div className='links'>
+            <a href='/login'>Login</a>
+        </div>
+        <button onClick={handleSubmit} >Register</button>
+        </div>
+        </div>
+     </div>
         </>
     )
 }
