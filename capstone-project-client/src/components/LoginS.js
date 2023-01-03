@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from 'react-redux'
+import './LoginS.css'
 
 function LoginS(props) {
 
@@ -54,25 +55,40 @@ function LoginS(props) {
 
     return (
         <>
-        <h2>Login</h2>
-        <input onChange={handleOnChange} name="email" type='text' required="required" />
-        <span>Email</span>
-        <i></i>
-        <input onChange={handleOnChange} name="password" type='password' required="required" />
-        <span>Password</span>
-        <i></i>
-        <input onChange={handleOnChange} name="Role" type='text' required="required" />
-        <span>Role</span>
-        <i></i>
-        <button onClick={handleSubmit}>Login</button>
+            <div className='body'>
+                <div className='box'>
+                    <div className='form'>
+                        <h2>Login</h2>
+                        <div className='inputBox'>
+                            <input minLength={4} maxLength={16} onChange={handleOnChange} name="username" type="text" required="required" />
+                            <span>Username</span>
+                            <i></i>
+                        </div>
+                        <div className='inputBox'>
+                            <input minLength={7} maxLength={7} onChange={handleOnChange} name="Role" type="text" required="required" />
+                            <span>Role</span>
+                            <i></i>
+                        </div>
+                        <div className='inputBox'>
+                            <input minLength={4} maxLength={16} onChange={handleOnChange} name="password" type="password" required="required" />
+                            <span>Password</span>
+                            <i></i>
+                        </div>
+                        <div className='links'>
+                            <a href='/register'>Sign Up</a>
+                        </div>
+                        <button onClick={handleSubmit}>Login</button>
+                    </div>
+                </div>
+            </div>
         </>
     )
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        onLogin: (token) => dispatch({type: 'ON_LOGIN', payload: token}),
-        onRole:(Role) => dispatch({type: 'ON_ROLE',  payload:Role})
+        onLogin: (token) => dispatch({ type: 'ON_LOGIN', payload: token }),
+        onRole: (Role) => dispatch({ type: 'ON_ROLE', payload: Role })
 
     }
 }

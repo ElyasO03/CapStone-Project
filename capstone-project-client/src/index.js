@@ -15,6 +15,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import ProtectedRoute from './components/ProtectedRoute';
 import Signout from './components/Signout';
 import Quiz from './components/Quiz';
+import QuizE from './components/QuizE';
+import QuizM from './components/QuizM';
+import QuizH from './components/QuizH';
 
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
@@ -37,7 +40,9 @@ root.render(
         <Route path = '/teacher-post/:id' element ={<ProtectedRoute><TeacherPost/></ProtectedRoute>} />
         <Route path = '/signout' element = {<Signout/>} />
         <Route path = '/quiz' element = {<Quiz />} />
-
+        <Route path = '/easyquiz' element = {<QuizE />} />
+        <Route path = '/mediumquiz' element = {<QuizM />} />
+        <Route path = '/hardquiz' element = {<QuizH />} />
       </Routes>
       </Baselayout>
     </BrowserRouter>
