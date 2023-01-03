@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import "./QuizE.css"
+import "../style/QuizE.css"
 
 function QuizM() {
 

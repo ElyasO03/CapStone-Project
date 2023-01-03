@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { connect } from 'react-redux'
-import './LoginS.css'
+import '../style/LoginS.css'
 
 function LoginS(props) {
 
@@ -60,18 +60,18 @@ function LoginS(props) {
                     <div className='form'>
                         <h2>Login</h2>
                         <div className='inputBox'>
-                            <input minLength={4} maxLength={16} onChange={handleOnChange} name="username" type="text" required="required" />
-                            <span>Username</span>
-                            <i></i>
-                        </div>
-                        <div className='inputBox'>
-                            <input minLength={7} maxLength={7} onChange={handleOnChange} name="Role" type="text" required="required" />
-                            <span>Role</span>
+                            <input minLength={4} maxLength={30} onChange={handleOnChange} name="email" type="text" required="required" />
+                            <span>email</span>
                             <i></i>
                         </div>
                         <div className='inputBox'>
                             <input minLength={4} maxLength={16} onChange={handleOnChange} name="password" type="password" required="required" />
                             <span>Password</span>
+                            <i></i>
+                        </div>
+                        <div className='inputBox'>
+                            <input minLength={4} maxLength={8} onChange={handleOnChange} name="Role" type="text" required="required" />
+                            <span>Role</span>
                             <i></i>
                         </div>
                         <div className='links'>

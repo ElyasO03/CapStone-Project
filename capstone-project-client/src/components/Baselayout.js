@@ -1,6 +1,6 @@
 import Header from './Header'
-import { NavLink } from "react-router-dom";
-import {connect} from 'react-redux'
+// import { NavLink } from "react-router-dom";
+// import {connect} from 'react-redux'
 import '../style/header.css';
 
 

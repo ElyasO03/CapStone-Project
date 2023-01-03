@@ -1,5 +1,6 @@
 import React, { useState } from "react"
-import "./QuizE.css"
+import "../style/QuizE.css"
+import CountDown from "./CountDown";
 
 function QuizE() {
 
@@ -116,6 +117,7 @@ const restartGame = () => {
     setScore(0);
     setCurrentQuestion(0);
     setShowResults(false);
+    window.location.reload(false);
 }
 
 
@@ -127,6 +129,7 @@ const restartGame = () => {
 
                 <h2>Current Score: {score}</h2>
 
+                <CountDown seconds={179} />
 
                 {showResults ? (
                     <div className="final-results">

@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import { useState } from 'react'
 import { connect } from 'react-redux'
-import './RegisterS.css'
+import '../style/RegisterS.css'
 
 
 function RegisterS(props) {
@@ -51,6 +51,11 @@ function RegisterS(props) {
         <div className='inputBox'>
         <input minLength={4} maxLength={16} onChange={handleChange} type='text' name='username' />
         <span>Enter A Username</span>
+        <i></i>
+        </div>
+        <div className='inputBox'>
+        <input minLength={4} maxLength={30} onChange={handleChange} type='text' name='email' />
+        <span>Enter Email</span>
         <i></i>
         </div>
         <div className='inputBox'>
