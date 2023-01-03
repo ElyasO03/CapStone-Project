@@ -18,6 +18,7 @@ import Quiz from './components/Quiz';
 import QuizE from './components/QuizE';
 import QuizM from './components/QuizM';
 import QuizH from './components/QuizH';
+import Home from './components/Home';
 
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
@@ -43,6 +44,7 @@ root.render(
         <Route path = '/easyquiz' element = {<QuizE />} />
         <Route path = '/mediumquiz' element = {<QuizM />} />
         <Route path = '/hardquiz' element = {<QuizH />} />
+        <Route path = '/Home' element = {<Home />} />
       </Routes>
       </Baselayout>
     </BrowserRouter>
