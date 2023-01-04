@@ -97,7 +97,6 @@ app.get ('/get-teacher-question', async (req,res) => {
         // questionSet.push(obj)
     });
     res.json(answersArray)
-
 })
 
 
