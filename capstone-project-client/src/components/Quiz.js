@@ -2,11 +2,16 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
+import '../style/quiz.css';
+import { right } from "@popperjs/core";
 
 
 function Quiz() {
     const [score, setScore] = useState(0);
     const [questions, setQuestions] = useState([]);
+    const [rightOption, setRightOption] = useState('')
+    const [choiceOption, setChoiceOption] = useState({})
+    const [userSelection, setUserSelection] = useState ({})
 
     useEffect(() => {
         axios
@@ -20,22 +25,60 @@ function Quiz() {
             })
     }, [])
 
-    const optionClicked = (is_true) => {
-        if (is_true) {
-            setScore(score + 1);
-        }
+    const savedUserChoice = (questionID, answerID)=> {
+         console.log (questionID, answerID)
+         setUserSelection({
+            ...userSelection,
+            [questionID]: answerID
+         })
     }
 
-    const questionItems = questions.filter(questions => questions.level === 'Medium').map(question => {
+    const classNameForChoice = (questionAndChoice) => {
+
+        if(questionAndChoice == null) {
+          return "initial-answer"
+        }
+        let userChoiceID = userSelection[questionAndChoice.questionID]
+        return userChoiceID == questionAndChoice.choiceID ? "right-answer": "initial-answer"
+    }
+
+
+
+    const choiceStatement = (is_true, choiceID)=> {
+        setChoiceOption({
+           ...choiceOption,
+           [is_true]: choiceID
+        })
+
+   }
+
+
+    const optionClicked = (is_true) => {
+        if (is_true) {
+            setScore(score + 1)
+        } 
+
+    }
+
+
+  
+
+
+
+    const questionItems = questions.filter(questions => questions.level === 'easy').map(question => {
 
         const choiceItems = question.answers.map(answer => {
             let lvl = question.level
             if(lvl === 'easy'){
             }
             return (
-                <div>
-                    <button key={answer.id} onClick={() => optionClicked(answer.is_true)}>{answer.choice}</button>
+                <>
+                <div  key={answer.id}>
+                    <button className={classNameForChoice(answer.is_true ? {questionID: question.id, choiceID: answer.id}: null)} 
+                    
+                    onClick={() => {savedUserChoice(question.id, answer.id); optionClicked(answer.is_true)}}>{answer.choice}</button>
                 </div>
+                </>
             )
         })
 
@@ -127,3 +170,37 @@ export default Quiz;
 //         </>
 //     )
 // }
+
+// const questionItems = questions.filter(questions => questions.level === 'easy').map(question => {
+
+//     const choiceItems = question.answers.map(answer => {
+//         console.log(answer)
+//         let lvl = question.level
+//         if(lvl === 'easy'){
+//         }
+//         return (
+//             <>
+//             {/* {rightOption =='' &&( */}
+//             <div >
+//                 <button
+//                 className={answer.is_true === true ? 'right-answer' : 'initial-answer'} 
+//                 key={answer.id} 
+//                 onClick={() => {savedUserChoice(question.id, answer.id); choiceStatement(answer.is_true, answer.id)}}>{answer.choice}</button>
+//             </div>
+//             {/* )} */}
+//              {/* {rightOption =='green' &&(
+//             <div >
+//                 <button  key={answer.id} onClick={() => optionClicked(answer.is_true)}>{answer.choice}</button>
+//             </div>
+//             )} */}
+//             </>
+//         )
+//     })
+
+//     return (
+//         <div>
+//             <h1 key={question.id}>Questions: {question.question}</h1>
+//             {choiceItems}
+//         </div>
+//     )
+// })

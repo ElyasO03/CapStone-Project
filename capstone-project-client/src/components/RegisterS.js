@@ -59,7 +59,7 @@ function RegisterS(props) {
         <i></i>
         </div>
         <div className='inputBox'>
-        <input minLength={7} maxLength={7} onChange={handleChange} type='text' name='Role' />
+        <input minLength={4} maxLength={8} onChange={handleChange} type='text' name='Role' />
         <span>Role</span>
         <i></i>
         </div>

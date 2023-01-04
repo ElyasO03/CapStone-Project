@@ -1,0 +1,11 @@
+.right-answer{
+   background-color: green;
+}
+
+.wrong-answer{
+    background-color: red;
+
+ }
+.initial-answer{
+    background-color: aqua;
+}
