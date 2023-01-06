@@ -2,12 +2,18 @@
 const initialState = {
     isAuthenticated: false,
     role: '',
-    username: ''
+    username: '',
+    count: 0
     
     
 }
 
 const reducer = (state = initialState, action) => {
+    if(state === undefined){
+        state = {
+            count: 0
+        }
+    }
     switch (action.type) {
         case 'ON_LOGIN':
             return {
@@ -30,6 +36,11 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 username: action.payload 
+            }
+        case 'INCREMENT':
+            return {
+                ...state,
+                count:state.count + action.data
             }
         default:
             return state    
