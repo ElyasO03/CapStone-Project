@@ -21,11 +21,11 @@
   </p>
 </div>
 
-#### About the Project
+## About the Project
   
 ###### This application was designed to allow web developers to test their knowledge, and teachers to create new quizzes for their students. There are three difficulty levels to choose from: easy, medium, and hard. At the end of the quiz, the user will be able to see the percentage of questions that were answered correctly 
 
-#### Built With
+## Built With
 * React
 * Redux
 * Sequelize
