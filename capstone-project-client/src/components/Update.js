@@ -20,7 +20,7 @@ function TeacherPost() {
    
     const handleSubmit = (e) => {
         e.preventDefault()
-        fetch(`http://localhost:8080/teacher-question-post/${id}`, {
+        fetch(`http://localhost:8080/update-your-post/${id}`, {
             method: 'POST', 
             headers: {
                 'Content-Type': 'application/json'
@@ -74,7 +74,7 @@ function TeacherPost() {
                 <label htmlFor="False">False</label>
                 <input id = "False" className='input' onChange = {handleChange} name = "choice4TrueFalse" type = "checkbox" value={false}  />       
                 <br/>
-                <button >Create a QUIZ</button>
+                <button >Update</button>
             </form> 
         </div>
     )
@@ -82,6 +82,4 @@ function TeacherPost() {
 }
 
 export default TeacherPost
-
-
 

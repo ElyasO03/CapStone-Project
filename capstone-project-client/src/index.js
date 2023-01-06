@@ -19,7 +19,13 @@ import QuizE from './components/QuizE';
 import QuizM from './components/QuizM';
 import QuizH from './components/QuizH';
 import Home from './components/Home';
+import Paginated from './components/Pagination';
+import Pagination from './components/Pagination';
+import TeacherCabinet from './components/TeacherCabinet';
+import Teacher2 from './components/Teacher2';
+import Update from './components/Update';
 import HomePage from './components/HomePage';
+
 
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
@@ -31,8 +37,9 @@ if(token) {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+  
     <Provider store = {store}>
+      <React.StrictMode>
       <BrowserRouter>
       <Baselayout >
       <Routes>
@@ -47,11 +54,16 @@ root.render(
         <Route path = '/mediumquiz' element = {<QuizM />} />
         <Route path = '/hardquiz' element = {<QuizH />} />
         <Route path = '/Home' element = {<Home />} />
+        <Route path='/Pagination' element = {<Pagination/>} />
+        <Route path='/my-teacher-list/:id' element = {<TeacherCabinet/>} />
+        <Route path = "/update/:id" element = {<Update/>} />
+        {/* <Route path='/my-teacher-list/:id' element = {<Teacher2/>} /> */}
       </Routes>
       </Baselayout>
     </BrowserRouter>
+    </React.StrictMode>
     </Provider>
-  </React.StrictMode>
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
