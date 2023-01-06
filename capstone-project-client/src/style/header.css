@@ -1,11 +1,77 @@
-.navs {
-    display: flex;
-    justify-content: space-evenly;
-
+.navbar{
    
+    margin-left: 20px;
+    display: grid;
+
+    align-items: center;
+    justify-content: space-around;
 }
 
-.copyright {
+/* .offcanvas{
+    background-color: blueviolet;
+} */
+
+.copyright{
     justify-content: center;
     align-items: center;
 }
+
+.navs{
+    display: grid;
+    align-items: center; 
+    margin-top: 30px;
+    row-gap: 20px;
+  
+
+}
+
+.welcome {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    gap: 20px;
+    justify-content: start;
+    /* justify-content: flex-start; */
+    width: 18%; 
+}
+.name{
+    display: grid;
+    color: rgb(10, 6, 95);
+    justify-content: center;
+    
+    
+    /* justify-content: flex-start; */
+}
+
+.logoutSign{
+    font: bolder;
+}
+
+.triviaMenu{
+    font-weight:700;
+    padding: 15px;
+
+}
+.navButton {
+    background-color: rgba(39, 19, 68, 0.714);
+    width: 80%;
+    border: 1px groove rgb(110, 106, 106);
+    border-radius: 10px;
+    
+}
+
+.links {
+    display: grid;
+    justify-content: center;
+    color: antiquewhite;
+}
+
+.signoutContainer{
+    margin-top: 30px;
+    width: 80%;
+    display: grid;
+    justify-content: center;
+
+}
+
+
+

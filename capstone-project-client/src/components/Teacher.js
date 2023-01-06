@@ -17,7 +17,14 @@ function Teacher() {
             [e.target.name]: e.target.value
         }, [])
     }
-   
+    
+
+    
+
+
+
+
+
     const handleSubmit = (e) => {
         e.preventDefault()
         fetch(`http://localhost:8080/teacher-question-post/${id}`, {
