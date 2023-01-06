@@ -1,9 +1,4 @@
-https://www.flaticon.com/free-icons/quiz
 
-
-
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
 
 
@@ -15,35 +10,22 @@ https://www.flaticon.com/free-icons/quiz
     <hr>
     <br />
     <br />
-    <a href="#">View Demo</a>
     ·
+    <div>
+      <a href="#">View Demo</a>
+      <img src='./home1.png'>
+    </div>
    
-    ·
-
-  </p>
-</div>
-
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
       <h4 ">About The Project</h4>
       <p>This application was designed to allow web developers to test their knowledge, and teachers to create new quizzes for their students. There are three difficulty levels to choose from: easy, medium, and hard. At the end of the quiz, the user will be able to see the percentage of questions that were answered correctly </p>
       <ul>
         <li><h4>Built With</h4></li>
         <p>react, redux, sequelize, express, axios, bootstrap, and bcrypt</p>
       </ul>
-    </li>
-   
-  </ol>
-</details>
+    ·
 
-
-
-
+  </p>
+</div>
 
 
 
