@@ -41,9 +41,10 @@
 
 Daniel Moros - [Daniel's Portfolio](https://ddmoros.wixsite.com/ddmportfolio) - [Daniel's GitHub](https://github.com/Ddmoros) - ddmoros@gmail.com
 
-Dmitry Shunin - [Dmitry's Portfolio](https://twitter.com/your_username) - [Dmitry's GitHub](https://github.com/Dimasik0204) - email@example.com
+Dmitry Shunin - [Dmitry's Portfolio](https://dmitry-shunin.netlify.app/index.html) - [Dmitry's GitHub](https://github.com/Dimasik0204) - dmitryshunin0204@gmail.com
 
-Elyas Ozbek - [Elyas's Portfolio](https://twitter.com/your_username) - [Elyas's GitHub](https://github.com/ElyasO03) - email@example.com
+Elyas Ozbek - [Elyas's Portfolio](https://elyasozbek.dev) - [Elyas's GitHub](https://github.com/ElyasO03) - elyas.ozbek07@gmail.com
+
 
 
 
