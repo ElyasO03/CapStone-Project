@@ -1,3 +1,4 @@
+/* This is importing the React library and the useState hook from the React library. */
 import React, { useState } from "react"
 import "../style/QuizE.css"
 
