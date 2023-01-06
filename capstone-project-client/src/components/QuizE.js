@@ -166,7 +166,7 @@ function QuizE() {
 
                 <h2>Current Score: {score}</h2>
 
-                <CountDown seconds={179} />
+                <CountDown seconds={149} />
 
                 {showResults ? (
                     <div className="final-results">
