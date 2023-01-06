@@ -2,6 +2,9 @@ import Header from './Header'
 // import { NavLink } from "react-router-dom";
 // import {connect} from 'react-redux'
 import '../style/header.css';
+import Offcanvas from './Offcanvas';
+import Offcanvas2 from './Offcanvas2';
+
 
 
 
@@ -11,7 +14,9 @@ import '../style/header.css';
 function Baselayout (props) {
     return (
         <div >
-            <Header />
+            {/* <Offcanvas /> */}
+            <Offcanvas2 />
+            {/* <Header /> */}
             {props.children}
             <h6 >Copyright 2022 </h6>
         </div>
