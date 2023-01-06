@@ -24,6 +24,8 @@ import Pagination from './components/Pagination';
 import TeacherCabinet from './components/TeacherCabinet';
 import Teacher2 from './components/Teacher2';
 import Update from './components/Update';
+import HomePage from './components/HomePage';
+
 
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
@@ -41,6 +43,7 @@ root.render(
       <BrowserRouter>
       <Baselayout >
       <Routes>
+        <Route path='/' element= { <HomePage />} />
         <Route path = '/:id' element= { <App />} />
         <Route path = '/login' element= {<LoginS />} />
         <Route path = '/register' element= {<RegisterS />} />
