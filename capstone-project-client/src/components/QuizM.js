@@ -1,6 +1,7 @@
 /* This is importing the React library and the useState hook from the React library. */
 import React, { useState } from "react"
 import "../style/QuizE.css"
+import CountDown from "./CountDown";
 
 function QuizM() {
 
@@ -128,6 +129,8 @@ const restartGame = () => {
                 <h2>Medium Programmer Quiz</h2>
 
                 <h2>Current Score: {score}</h2>
+
+                <CountDown seconds={99} />
 
 
                 {showResults ? (

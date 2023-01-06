@@ -13,6 +13,7 @@ function Header (props) {
         <div className= "navs">
 
              { props.isAuth ? <h4> Welcome, {user} Status: {role}</h4>: null  }
+            <NavLink to = "/" ><h3>Home</h3></NavLink>
             <NavLink to = "/home" ><h3>Home</h3></NavLink>
             <NavLink to = "/quiz" ><h3>Student</h3></NavLink>
             { props.role === 'teacher' ? <NavLink to = {`/teacher-post/${id}`} ><h3>Teacher</h3></NavLink>: null  }

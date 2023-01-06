@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "../style/QuizE.css"
+import CountDown from "./CountDown";
 
 function QuizH() {
 
@@ -127,6 +128,8 @@ const restartGame = () => {
                 <h2>Hard Programmer Quiz</h2>
 
                 <h2>Current Score: {score}</h2>
+
+                <CountDown seconds={89} />
 
 
                 {showResults ? (
