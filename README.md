@@ -33,7 +33,11 @@
 * Axios
 * Bootstrap
 * Bcrypt
-
+* JavaScript
+* Bootstrap
+* PostgreSQL
+* CSS
+* Rest APIs
 
 
 <!-- CONTACT -->
