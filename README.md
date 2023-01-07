@@ -5,7 +5,7 @@
   <h3 align="center">CapStone Project</h3>
 
   <p align="center">
-   This quiz application is deigned for web developers to test their knowledge!
+   This quiz application is designed for web developers to test their knowledge!
     <br />
     <hr>
     <br />
