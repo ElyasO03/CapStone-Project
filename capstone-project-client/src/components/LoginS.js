@@ -44,7 +44,7 @@ function LoginS(props) {
                         props.onLogin(token)
                         props.onRole(Role)
 
-                        navigate(`/${id}`)
+                        navigate(`/`)
                     } else {
                         alert('The email or password or Role is incorrect. Please try again')
                     }
