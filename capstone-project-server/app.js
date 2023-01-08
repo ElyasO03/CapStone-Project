@@ -83,7 +83,7 @@ app.get ('/get-teacher-question', async (req,res) => {
     let teacher_answers = await models.Answer.findAll({})
     teacher_question.forEach(question => {
         let filteredArr = teacher_answers.filter(answer => answer.questionId == question.id)
-        answersArray.push({question: question.Questions, level:question.level, id:question.id, answers:filteredArr})
+        answersArray.push({question: question.Questions, level:question.level, id:question.id, answers:filteredArr, userId: question.UserID})
         // obj.question = choice.Questions
         // obj.answers = filteredAnswers
         // questionSet.push(obj)
@@ -94,7 +94,7 @@ app.get ('/get-teacher-question', async (req,res) => {
 app.get ('/all-teachers', async (req,res) => {
     const username = req.username 
     const userId = req.id
-    let teacher  = await models.User.findAll({})
+    let teacher  = await models.User.findAll({where:{Role:'teacher'}})
     res.json(teacher)
 })
 
@@ -114,6 +114,14 @@ app.get('/my-teacher-list/:id', async (req, res) => {
 app.post('/delete-choice', async(req, res) =>  {
     let {id} = req.body
     await models.Answers.destroy({where:{id:parseInt(id)}})
+    res.json({success:'Successfully deleted'})
+}) 
+
+app.post('/delete-question', async(req, res) =>  {
+    let {id} = req.body
+    console.log(req.body)
+    await models.Answer.destroy({where:{questionId:id}})
+    await models.Question.destroy({where:{id:id}})
     res.json({success:'Successfully deleted'})
 }) 
 

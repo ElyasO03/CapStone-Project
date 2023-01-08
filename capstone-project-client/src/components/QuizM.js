@@ -1,14 +1,9 @@
 /* This is importing the React library and the useState hook from the React library. */
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "../style/QuizE.css"
 import CountDown from "./CountDown";
 
 function QuizM() {
-
-    const [showResults, setShowResults] = useState(false);
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [score, setScore] = useState(0);
-
 
     const mediumQuestions = [
         {
@@ -102,61 +97,101 @@ function QuizM() {
             ],
         },
     ];
-
-const optionClicked = (isCorrect) => {
-    if(isCorrect) {
-        setScore(score + 1);
-    }
-
-if(currentQuestion +1 < mediumQuestions.length) {
-        setCurrentQuestion(currentQuestion +1);
-    } else {
-        setShowResults(true);
-    }
-}
-
-const restartGame = () => {
-    setScore(0);
-    setCurrentQuestion(0);
-    setShowResults(false);
-}
-
-
-    return (
+    function shuffleQuestions(array) { // shuffle mediumQuestions to get random questions
+        for (var i = array.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var temp = array[i];
+            array[i] = array[j];
+            array[j] = temp;
+        }
+        return array;
+        }
+    
+        useEffect(() => {
+        restartGame()
+        }, []);
+    
+        const [showResults, setShowResults] = useState(false);
+        const [score, setScore] = useState(0);
+        const [shuffledQuestions, setShuffledQuestions] = useState([]);
+        const [questionsLeft, setQuestionsLeft] = useState();
+        const [rightAnswers, setRightAnswers] = useState([])
+        const [wrongAnswers, setWrongAnswers] = useState([])
+    
+        const handleToggle = (e, answer,isCorrect) => {
+            // console.log(answer)
+        if (isCorrect == true) {
+            e.currentTarget.classList.toggle("green");
+            rightAnswers.push(answer)
+            setScore(score + 1);
+            setTimeout(timeout, 1000, e.currentTarget, "green");
+        } else {
+            e.currentTarget.classList.toggle("red");
+            wrongAnswers.push(answer)
+            setTimeout(timeout, 1000, e.currentTarget, "red");
+        }
+        };
+    
+        const timeout = (e, color) => {
+        setQuestionsLeft(questionsLeft - 1);
+        if (questionsLeft === 0) {
+            setShowResults(true);
+        }
+        e.classList.remove(color);
+        // console.log(questionsLeft);
+        };
+    
+    
+        const restartGame = () => {
+            let newArr = shuffleQuestions(mediumQuestions);
+            setShuffledQuestions(shuffleQuestions(newArr));
+            setQuestionsLeft(newArr.length - 1);
+            setScore(0);
+            setRightAnswers([])
+            setWrongAnswers([])
+            setShowResults(false);
+        }
+    
+        return (
         <>
-            <div className="QuizE">
-
-                <h2>Medium Programmer Quiz</h2>
-
-                <h2>Current Score: {score}</h2>
-
-                <CountDown seconds={99} />
-
-
-                {showResults ? (
-                    <div className="final-results">
-                        <h1>Final Results</h1>
-                        <h2> {score} out of {mediumQuestions.length} correct - ({(score/mediumQuestions.length) * 100}%)</h2>
-                        <button onClick={() => restartGame()}>Restart Game</button>
-                    </div>
-                ) : (
-                    <div className="question-card">
-                        <h2>Question {currentQuestion + 1} out of {mediumQuestions.length}</h2>
-                        <h3 className="question-text">{mediumQuestions[currentQuestion].text}</h3>
-
-                        <ul>
-                            {mediumQuestions[currentQuestion].options.map((option) => {
-                                return(
-                                    <li onClick={() => optionClicked(option.isCorrect)} key={option.id}>{option.text}</li>
-                                )
-                            })}
-                        </ul>
-                    </div>
-                )}
-
+            {shuffledQuestions.length <= 0 || showResults ? (
+                <>
+            <div className="final-results">
+                <h1>Final Results</h1>
+                <h2>
+                {" "}
+                {score} out of {mediumQuestions.length} correct - (
+                {(score / mediumQuestions.length) * 100}%)
+                </h2>
+                
+                <button onClick={() => restartGame()}>Restart Game</button>
             </div>
+                {rightAnswers.length <=0 ? 'No right answers' : rightAnswers.map(answer=>{
+                    return <div>RIGHT: {answer.text}</div>
+                })}
+                {wrongAnswers.length <=0 ? 'No wrong answers' : wrongAnswers.map(answer=>{
+                    return <div>WRONG: {answer.text}</div>
+                })}
+            </>
+            ) : (
+            <>
+                <h2>Medium Programmer Quiz</h2>
+                <h2>Current Score: {score}</h2>
+                <CountDown seconds={149} />
+                <h1>{shuffledQuestions[questionsLeft].text}</h1>
+                <ul>
+                {shuffledQuestions[questionsLeft].options.map((answer) => {
+                    return (
+                    <li onClick={(e) => handleToggle(e, shuffledQuestions[questionsLeft], answer.isCorrect)}>
+                        {answer.text}
+                    </li>
+                    );
+                })}
+                </ul>
+            </>
+            )}
         </>
-    );
-}
-
+        );
+        }
+    
 export default QuizM;

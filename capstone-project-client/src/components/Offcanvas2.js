@@ -45,8 +45,7 @@ const options = [
     const toggleShow = () => setShow((s) => !s);
   
     return (
-    <>
-        
+    <>  
        
             <div className='navbar'>        
             <button className = 'navToggleButton' onClick={toggleShow}>
