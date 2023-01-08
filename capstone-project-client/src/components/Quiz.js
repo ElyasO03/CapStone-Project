@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios'
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-// import '../style/quiz.css';
-import '../style/student.css';
+import '../style/quiz.css';
 import { right } from "@popperjs/core";
 import CountDown from '../components/CountDown';
 import Pagination from 'react-bootstrap/Pagination';
@@ -11,10 +10,8 @@ import { useDispatch, useSelector} from 'react-redux'
 import incrementCount from '../actions/incrementCount.js' 
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import {NavLink} from "react-router-dom";
-import {connect} from 'react-redux';
 
-function Quiz(props) {
+function Quiz() {
     const [score, setScore] = useState(0);
     const [questions, setQuestions] = useState([]);
     const [rightOption, setRightOption] = useState('')
@@ -145,7 +142,6 @@ function Quiz(props) {
 
     // const questionItems = questions.filter(questions => questions.level === 'easy').map(question => {
 
-
     //     const choiceItems = question.answers.map(answer => {
     //         let lvl = question.level
     //         if(lvl === 'easy'){
@@ -155,6 +151,7 @@ function Quiz(props) {
     //             <div  key={answer.id}>
     //                 {/* <div className={choiceStatement(answer.is_true ?{is_true: answer.is_true, choiceID: answer.id}: null)}><b>Well Done</b></div> */}
     //                 <button className={classNameForChoice(answer.is_true ? {questionID: question.id, choiceID: answer.id}: null)} 
+                    
     //                 onClick={() => {savedUserChoice(question.id, answer.id, answer.is_true)}} >{answer.choice}</button>
 
     //             </div>
@@ -181,7 +178,6 @@ const handleSpecificTeacher = (teacherId) => {
 }
 
 
-
     return (
         <>
 
@@ -191,19 +187,12 @@ const handleSpecificTeacher = (teacherId) => {
     })}
     <Dropdown.Item onClick={()=>setFilteredQuestions(questions)}>all teachers</Dropdown.Item>
     </DropdownButton>
-
-
-    return (
-        <div className="mainContainerStudent">
-
             <div>
                 <h1>Quiz</h1>
 
                 <h2>Current score: {score}</h2>
                 {/* <CountDown seconds={179} /> */}
-            </div>
-            <div className="questionItems">
-                {questionItems}
+
             </div>
           
                     <Card style={{ width: '18rem' }}>
@@ -221,40 +210,12 @@ const handleSpecificTeacher = (teacherId) => {
             
 
 
-
-        </div>
+        </>
     )
 }
-const mapStateToProps =(state) =>{
-    return {
-       
-        isAuth: state.isAuthenticated,
-        role: state.role,
-        username: state.username
-        
-    }
-}
 
+export default Quiz;
 
-export default connect (mapStateToProps)(Quiz)
-
-{/* <Card style={{ width: '18rem' }}>
-<Card.Body>
-<Card.Title>quizlevelselected</Card.Title>
-<Card.Text>
-    {questionItems}
-</Card.Text>
-</Card.Body>
-<Card.Body>
-<Button href="#">Previous</Button>
-<Button href="#">Next</Button>
-</Card.Body>
-</Card>
-
-
-
-
- */}
 
 
 
