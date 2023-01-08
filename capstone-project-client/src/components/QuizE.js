@@ -196,10 +196,10 @@ return (
         <button onClick={() => restartGame()}>Restart Game</button>
     </div>
         {rightAnswers.length <=0 ? 'No right answers' : rightAnswers.map(answer=>{
-            return <div>RIGHT: {answer.text}</div>
+            return <div className="centert">RIGHT: {answer.text}</div>
         })}
         {wrongAnswers.length <=0 ? 'No wrong answers' : wrongAnswers.map(answer=>{
-            return <div>WRONG: {answer.text}</div>
+            return <div className="centert">WRONG: {answer.text}</div>
         })}
     </>
     ) : (
@@ -207,7 +207,7 @@ return (
         <h2>Easy Programmer Quiz</h2>
         <h2>Current Score: {score}</h2>
         <CountDown seconds={149} />
-        <h1>{shuffledQuestions[questionsLeft].text}</h1>
+        <h1 className="questionb">{shuffledQuestions[questionsLeft].text}</h1>
         <ul>
         {shuffledQuestions[questionsLeft].options.map((answer) => {
             return (

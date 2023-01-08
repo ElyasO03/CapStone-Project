@@ -93,3 +93,15 @@ button {
   color: blue;
   margin-bottom: 20px;
 }
+
+.questionb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.centert {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
