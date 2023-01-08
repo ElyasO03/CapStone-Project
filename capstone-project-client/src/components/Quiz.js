@@ -8,7 +8,8 @@ import CountDown from '../components/CountDown';
 import Pagination from 'react-bootstrap/Pagination';
 import { useDispatch, useSelector} from 'react-redux'
 import incrementCount from '../actions/incrementCount.js' 
-
+import Dropdown from 'react-bootstrap/Dropdown';
+import DropdownButton from 'react-bootstrap/DropdownButton';
 
 function Quiz() {
     const [score, setScore] = useState(0);
@@ -16,7 +17,8 @@ function Quiz() {
     const [rightOption, setRightOption] = useState('')
     const [choiceOption, setChoiceOption] = useState({})
     const [userSelection, setUserSelection] = useState ({})
-  
+    const [teacherList, setTeacherList] = useState([])
+    const [filteredQuestions, setFilteredQuestions] = useState([])
     // const [currentPage, setCurrentPage] = useState(1);
     // // const [message, setMessage] = useState('');
     // const isAnonymous = true;
@@ -41,6 +43,17 @@ function Quiz() {
             .then(res => {
                 console.log(res.data)
                 setQuestions(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [])
+    useEffect(() => {
+        axios
+            .get('http://localhost:8080/all-teachers')
+            .then(res => {
+                console.log(res.data)
+                setTeacherList(res.data)
             })
             .catch(err => {
                 console.log(err)
@@ -127,35 +140,53 @@ function Quiz() {
     // }
 
 
-    const questionItems = questions.filter(questions => questions.level === 'easy').map(question => {
+    // const questionItems = questions.filter(questions => questions.level === 'easy').map(question => {
 
-        const choiceItems = question.answers.map(answer => {
-            let lvl = question.level
-            if(lvl === 'easy'){
-            }
-            return (
-                <>
-                <div  key={answer.id}>
-                    {/* <div className={choiceStatement(answer.is_true ?{is_true: answer.is_true, choiceID: answer.id}: null)}><b>Well Done</b></div> */}
-                    <button className={classNameForChoice(answer.is_true ? {questionID: question.id, choiceID: answer.id}: null)} 
+    //     const choiceItems = question.answers.map(answer => {
+    //         let lvl = question.level
+    //         if(lvl === 'easy'){
+    //         }
+    //         return (
+    //             <>
+    //             <div  key={answer.id}>
+    //                 {/* <div className={choiceStatement(answer.is_true ?{is_true: answer.is_true, choiceID: answer.id}: null)}><b>Well Done</b></div> */}
+    //                 <button className={classNameForChoice(answer.is_true ? {questionID: question.id, choiceID: answer.id}: null)} 
                     
-                    onClick={() => {savedUserChoice(question.id, answer.id, answer.is_true)}} >{answer.choice}</button>
+    //                 onClick={() => {savedUserChoice(question.id, answer.id, answer.is_true)}} >{answer.choice}</button>
 
-                </div>
-                </>
-            )
-        })
+    //             </div>
+    //             </>
+    //         )
+    //     })
 
-        return (
-            <div>
-                <h1 key={question.id}>Questions: {question.question}</h1>
-                {choiceItems}
-            </div>
-        )
-    })
+    //     return (
+    //         <div>
+    //             <h1 key={question.id}>Questions: {question.question}</h1>
+    //             {choiceItems}
+    //         </div>
+    //     )
+    // })
+let result =  questions.map(question => {
+    console.log(question.question)
+    return question.question
+})
+    // console.log(result)
+const handleSpecificTeacher = (teacherId) => {
+        let filterQuestions = questions.filter(question => question.userId == teacherId)
+        console.log(filterQuestions)
+        setFilteredQuestions(filterQuestions)
+}
+
 
     return (
         <>
+
+<DropdownButton id="dropdown-basic-button" title="Choose teacher">
+    {teacherList.map(teacher=>{
+        return <Dropdown.Item onClick={()=>handleSpecificTeacher(teacher.id)}>{teacher.username}</Dropdown.Item>
+    })}
+    <Dropdown.Item onClick={()=>setFilteredQuestions(questions)}>all teachers</Dropdown.Item>
+    </DropdownButton>
             <div>
                 <h1>Quiz</h1>
 
@@ -168,7 +199,7 @@ function Quiz() {
                     <Card.Body>
                     <Card.Title>quizlevelselected</Card.Title>
                     <Card.Text>
-                        {questionItems}
+                       {filteredQuestions.length <= 0 ? result : filteredQuestions.map(question => question.question) }
                     </Card.Text>
                     </Card.Body>
                     <Card.Body>

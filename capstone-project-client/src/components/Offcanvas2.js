@@ -48,7 +48,7 @@ const options = [
             <Button variant="primary" onClick={toggleShow}>
             {name}Menu
             </Button>
-            <NavLink to = "/quiz" style={{ textDecoration: 'none' }}><h2 className='name'><SiNintendogamecube size={30}/>CoderTrivia</h2></NavLink>
+            <NavLink to = "/" style={{ textDecoration: 'none' }}><h2 className='name'><SiNintendogamecube size={30}/>CoderTrivia</h2></NavLink>
             { props.isAuth ? <div className='welcome'><h6> Welcome, {user}</h6> <h6>Status: {role}</h6></div>: null  }
             
         </div>
@@ -60,7 +60,7 @@ const options = [
           <Offcanvas.Body>
           <div className= "navs">
                 { props.isAuth ? <div><h5> Welcome, {user}</h5> <h5>Status: {role}</h5></div>: null  }
-                <button className='navButton'><NavLink to = "/:id" style={{ textDecoration: 'none' }}><h3 className='links'>Home</h3></NavLink></button>
+                <button className='navButton'><NavLink to = "/" style={{ textDecoration: 'none' }}><h3 className='links'>Home</h3></NavLink></button>
                 <button className='navButton'><NavLink to = "/quiz" style={{ textDecoration: 'none' }}><h3 className='links'>Student</h3></NavLink></button>
                 { props.role === 'teacher' ? <NavLink to = {`/teacher-post/${id}`} style={{ textDecoration: 'none' }}><h3>Teacher</h3></NavLink>: null  }
                 {props.isAuth ? null:<NavLink to = "/login" style={{ textDecoration: 'none' }}><h3>Login</h3></NavLink>}
