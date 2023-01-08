@@ -1,0 +1,27 @@
+.copyright {
+    text-align: center;
+    background-color:  #a9d6e5;
+    margin-bottom: 0;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 45px;
+    padding: 7px;
+    font-size: large;
+    font-family: 'Coda', cursive;
+    color: rgb(10, 6, 95);
+    font-weight: 600;
+}
+
+.triangle2{
+    width: 100%;
+
+	border-left: 900px solid transparent;
+	border-right: 900px solid transparent;
+	border-bottom: 25px solid  #a9d6e5;
+    margin-top: 10px;
+} 
+
+.baselayout{
+    background-color: #f0e6ef;
+}
