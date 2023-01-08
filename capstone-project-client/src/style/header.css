@@ -1,16 +1,25 @@
 .navbar{
+   display: flex;
+    width: 100%;
+    /* margin-left: 60px; */
+    /* background-color: #8da9c4; */
+    background-color: #a9d6e5;
+    /* margin-bottom: 10px; */
+ 
    
-    margin-left: 20px;
-    display: grid;
+}
+.triangle {
+    width: 100%;
 
-    align-items: center;
-    justify-content: space-around;
+	border-left: 900px solid transparent;
+	border-right: 900px solid transparent;
+	border-top: 30px solid  #a9d6e5;
+    margin-bottom: 10px;
 }
 
 /* .offcanvas{
     background-color: blueviolet;
 } */
-
 .copyright{
     justify-content: center;
     align-items: center;
@@ -21,34 +30,59 @@
     align-items: center; 
     margin-top: 30px;
     row-gap: 20px;
-  
+    
+}
 
+.offcanvas{
+    background-color: aqua;
 }
 
 .welcome {
     display: grid;
-    grid-template-columns: 150px 150px;
-    gap: 20px;
+    /* grid-template-columns: 150px 150px;
+    gap: 20px; */
     justify-content: start;
     /* justify-content: flex-start; */
-    width: 18%; 
+    /* margin-right: 40px; */
+    padding:10px;
+    width:8%;
+    font-family: 'Alumni Sans Inline One', cursive;
+    margin-right: 12px;
+
 }
 .name{
     display: grid;
     color: rgb(10, 6, 95);
     justify-content: center;
-    
-    
+    grid-template-columns: 56px 250px;
+    font-size: 50px;
+    height: 90%;
+  margin-bottom: 0;
+  font-family: 'Coda', cursive;
+  font-weight: 900;
     /* justify-content: flex-start; */
+}
+
+.nameContainer{
+    width: 83%;
+    margin-left: 15px;
 }
 
 .logoutSign{
     font: bolder;
+    font-size: x-large;
+    font-weight:bolder;
+    color: rgba(39, 19, 68, 0.714);
+}
+.logoutSign:hover{
+     color: rgb(177, 8, 42);
 }
 
 .triviaMenu{
-    font-weight:700;
+    font-weight:900;
     padding: 15px;
+    font-family: 'Coda', cursive;
+    color: rgba(39, 19, 68, 0.882);
 
 }
 .navButton {
@@ -56,7 +90,10 @@
     width: 80%;
     border: 1px groove rgb(110, 106, 106);
     border-radius: 10px;
-    
+    font-family: 'Coda', cursive;
+}
+.navButton:hover{
+    background-color: rgb(177, 8, 42);
 }
 
 .links {
@@ -70,8 +107,40 @@
     width: 80%;
     display: grid;
     justify-content: center;
-
+   
 }
 
+.statusNav{
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-size: 25px;
+    color: rgb(10, 6, 95);
+}
+.userNav{
+    /* font-family: 'Alumni Sans Inline One', cursive; */
+    font-family: 'Rampart One', cursive;
+    font-size: 25px;
+    font-weight: 800;
+    color: rgb(10, 6, 95);
+    
+}
+.offUser{
+    /* font-family: 'Alumni Sans Inline One', cursive; */
+    font-family: 'Rampart One', cursive;
+    font-size: 35px;
+    color:  rgba(39, 19, 68, 0.714);
+    font-weight: 800;
+}
+
+.navToggleButton{
+   margin-left: 20px;
+   width: 5%;
+   background-color: #a9d6e5;
+   color: #0a065f;
+
+
+}
+.navToggleButton:hover {
+    color:rgb(177, 8, 42)
+}
 
 

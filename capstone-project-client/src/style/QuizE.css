@@ -1,5 +1,9 @@
+/* .mainContainer{
+  background-color: #ebebeb;
+} */
 .QuizE {
     text-align: center;
+    
   }
   
   .question-card {
@@ -85,3 +89,4 @@
     color: blue;
     margin-bottom: 20px;
   }
+  
