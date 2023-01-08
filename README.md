@@ -5,7 +5,7 @@
   <h3 align="center">CapStone Project</h3>
 
   <p align="center">
-   This quiz application is deigned for web developers to test their knowledge!
+   This quiz application is designed for web developers to test their knowledge!
     <br />
     <hr>
     <br />
@@ -23,7 +23,7 @@
 
 ## About the Project
   
-###### This application was designed to allow web developers to test their knowledge, and teachers to create new quizzes for their students. There are three difficulty levels to choose from: easy, medium, and hard. At the end of the quiz, the user will be able to see the percentage of questions that were answered correctly 
+###### This application was designed to allow web developers to test their knowledge, and teachers to create new quizzes for their students. There are three difficulty levels to choose from: easy, medium, and hard. At the end of the quiz, the user will be able to see the percentage of questions that were answered correctly. 
 
 ## Built With
 * React
@@ -33,7 +33,11 @@
 * Axios
 * Bootstrap
 * Bcrypt
-
+* JavaScript
+* Bootstrap
+* PostgreSQL
+* CSS
+* Rest APIs
 
 
 <!-- CONTACT -->

@@ -1,0 +1,70 @@
+.right-answer{
+    background-color: green;
+ }
+ 
+ .wrong-answer{
+     background-color: red;
+ 
+  }
+ .initial-answer{
+     display: grid;
+     grid-template-columns: 1fr;  
+     width: 500px;
+     background-color: rgb(39, 25, 82);
+     border-radius: 10px;
+ }
+ .choicesDiv{
+    width: 100%;
+   
+ }
+ .questionItems{
+   width: 100%;
+   display: grid;
+   
+
+ }
+ .question{
+   display: grid;
+   align-content: center;
+   justify-content: center;
+ }
+
+ .choice{
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    row-gap: 18px;
+    grid-template-rows: 50px 50px 50px 50px;
+    grid-template-columns: 1fr;  
+    border: 5px groove grey;
+    padding: 10px;
+    
+}
+ 
+ .pressed {
+   background-color: blue;
+ }
+ 
+.mainContainerStudent {
+    display: grid;
+    justify-content: center;
+}
+.questionAndAnswer{
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    border: 5px groove grey;
+    margin:5px;
+}
+
+.question{
+   
+}
+
+.eachChoice{
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    row-gap: 10px;
+}
