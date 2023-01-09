@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import "../style/QuizE.css";
 
 const formatTime = (time) => {
     let minutes = Math.floor(time / 60)
@@ -28,6 +29,6 @@ export default function CountDown({seconds}) {
     }, [countdown])
     
     return (
-        <h2>Count Down: {formatTime(countdown)}</h2>
+        <h2 className="textcr"><h2 className="textc">Count Down:  </h2>  {formatTime(countdown)} </h2>
     )
 }
