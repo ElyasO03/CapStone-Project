@@ -29,6 +29,6 @@ export default function CountDown({seconds}) {
     }, [countdown])
     
     return (
-        <h2 className="textcr"><h2 className="textc">Count Down:  </h2>  {formatTime(countdown)} </h2>
+        <h2 className="textcr"><h2 className="textct">Count Down:  </h2>  {formatTime(countdown)} </h2>
     )
 }

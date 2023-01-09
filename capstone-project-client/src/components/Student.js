@@ -4,6 +4,7 @@ import "../style/QuizE.css";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import { NavLink } from "react-router-dom";
+import CountDown from "./CountDown";
 
 const Quiz = () => {
 
@@ -133,11 +134,11 @@ const Quiz = () => {
             </>
             ) : (
             <>
-                <h2>Easy Programmer Quiz</h2>
-                <h2>Current Score: {score}</h2>
-                {/* <CountDown seconds={149} /> */}
-                <h1>{easyQuestions[questionsLeft].question}</h1>
-                <h1>level: {easyQuestions[questionsLeft].level}</h1>
+                <h2 className="textc">Easy Programmer Quiz</h2>
+                <h2 className="textc">Current Score: {score}</h2>
+                <CountDown seconds={299} />
+                <h1 className="questionb">{easyQuestions[questionsLeft].question}</h1>
+                <h1 className="questionb">level: {easyQuestions[questionsLeft].level}</h1>
                 <ul>
                 {easyQuestions[questionsLeft].answers.map((answer) => {
                     return (
