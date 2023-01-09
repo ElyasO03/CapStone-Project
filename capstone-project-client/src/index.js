@@ -25,6 +25,7 @@ import TeacherCabinet from './components/TeacherCabinet';
 import Teacher2 from './components/Teacher2';
 import Update from './components/Update';
 import HomePage from './components/HomePage';
+import Student from './components/Student';
 
 
 
@@ -50,6 +51,7 @@ root.render(
         <Route path = '/teacher-post/:id' element ={<ProtectedRoute><TeacherPost/></ProtectedRoute>} />
         <Route path = '/signout' element = {<Signout/>} />
         <Route path = '/quiz' element = {<Quiz />} />
+        <Route path = '/student' element = {<Student />} />
         <Route path = '/easyquiz' element = {<QuizE />} />
         <Route path = '/mediumquiz' element = {<QuizM />} />
         <Route path = '/hardquiz' element = {<QuizH />} />

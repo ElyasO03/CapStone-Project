@@ -1,0 +1,73 @@
+.postContainer {
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 50px 500px;
+    grid-template-columns: 0.7fr;
+    row-gap: 20px;
+
+}
+
+.titleCreateQuiz{
+    display: grid;
+    /* justify-content: center; */
+    /* border-right: 2px groove grey;
+    border-top: 2px groove grey;
+    border-bottom: 2px groove grey; */
+    height: 60px;
+    padding: 5px; 
+    width: 400px;
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-size: 65px;
+    color: rgb(10, 6, 95);
+}
+.formClass{
+  margin-top: 10px;
+}
+
+.majorContainer{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 2fr;
+}
+
+.display{
+    display: grid;
+
+}
+
+.choicesDisplay{
+    /* display: grid;
+    
+    border: 2px inset grey */
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    
+}
+
+.buttonDisplay{
+    width:100px;
+    height: 70px;
+    width: 100%;
+   background-color: rgba(41, 24, 108, 0.887);
+   border-radius: 25px;
+}
+
+.buttonDisplay:hover{
+   background-color:  rgb(85, 30, 167);
+}
+.Display-Back{
+    display: grid;
+    grid-template-columns: 180px 180px;
+    gap: 20px;
+    margin-bottom: 7px;
+}
+.create-quiz{
+    background-color: rgba(41, 24, 108, 0.887);
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.create-quiz:hover{
+    background-color:  rgb(85, 30, 167);
+}
+

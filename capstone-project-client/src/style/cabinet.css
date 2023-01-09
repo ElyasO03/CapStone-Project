@@ -1,0 +1,44 @@
+.teacherItems{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    border: 2px groove rgb(98, 154, 222);
+    width: 95%;
+}
+.choices-and-buttons{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+}
+.question-and-choices{
+    display: grid;
+    justify-content: center;
+    border: 2px groove rgb(98, 154, 222);
+    padding: 5px;
+}
+
+.question-and-choices-button{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.choice-delete{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+}
+.trash{
+    color: red;
+}
+.question-level{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.updateButton{
+    background-color: rgba(39, 19, 68, 0.714);
+    border-radius: 20px;
+}
+.deleteButton{
+    border-radius: 20px;
+    background-color: rgba(182, 8, 8, 0.939);
+}

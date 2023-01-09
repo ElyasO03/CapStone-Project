@@ -67,7 +67,8 @@ const options = [
           <div className= "navs">
                 { props.isAuth ? <div><h5 className='offUser'> Welcome, {user}</h5> <h5 className='offUser'>Status: {role}</h5></div>: null  }
                 <button className='navButton'><NavLink to = "/" style={{ textDecoration: 'none' }}><h3 className='links'>Home</h3></NavLink></button>
-                <button className='navButton'><NavLink to = "/quiz" style={{ textDecoration: 'none' }}><h3 className='links'>Student</h3></NavLink></button>
+                <button className='navButton'><NavLink to = "/quiz" style={{ textDecoration: 'none' }}><h3 className='links'>Big School</h3></NavLink></button>
+                <button className='navButton'><NavLink to = "/student" style={{ textDecoration: 'none' }}><h3 className='links'>My Class</h3></NavLink></button>
                 { props.role === 'teacher' ? <button className='navButton'><NavLink to = {`/teacher-post/${id}`} style={{ textDecoration: 'none' }}><h3 className='links'>Teacher</h3></NavLink></button>: null  }
                 {props.isAuth ? null:<button className='navButton'><NavLink to = "/login" style={{ textDecoration: 'none' }}><h3 className='links'>Login</h3></NavLink></button>}
                 {props.isAuth ?null:<button className='navButton'><NavLink to = "/register" style={{ textDecoration: 'none' }}><h3 className='links'>Registration</h3></NavLink></button>}

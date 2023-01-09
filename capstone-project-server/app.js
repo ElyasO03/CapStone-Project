@@ -68,7 +68,11 @@ app.post('/teacher-question-post/:id', async (req, res) => {
     ])
 
     // let upload_teacher_answer = await answerTeacher.save()
-    res.json({success:'Successfully post questions'})  
+    // res.json({success:'Successfully post questions'})  
+    res.redirect('/teacher-question-post/:id')
+   
+
+    
 })
 
 /

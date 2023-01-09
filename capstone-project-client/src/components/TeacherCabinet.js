@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import {NavLink} from "react-router-dom";
 import {connect} from 'react-redux';
+import '../style/cabinet.css';
+import { FaTrashAlt} from "react-icons/fa";
+import { TiDelete} from "react-icons/ti"; 
+import { IoIosCreate} from "react-icons/io"
+
 // import { Checkbox } from 'react-input-checkbox'
 
 
@@ -65,31 +70,49 @@ function TeacherCabinet(props) {
      window.location.reload(false)
    }
     const teacherItems = teacher.map((myClass, index) =>{
-        return <div key ={index}>
-                  <h3>{myClass.question}</h3> <button onClick={()=>deleteQuestion(myClass)}>delete question</button>
-                  <h5>{myClass.level}</h5>
+
+        return <div className='question-and-choices' key ={index}>
+                 <div className='question-and-choices-button'>
+                    <button className = 'updateButton' onClick= {()=>navigate(`/update/${myClass.id}`)} ><IoIosCreate size={30}/>Update</button>
+                    <button className = 'deleteButton'onClick={()=>deleteQuestion(myClass)}>Delete Question<TiDelete size={30}/></button> 
+                 </div>
+                 <div className='question-level'>
+                 <h3>{myClass.question}</h3>
+                 <h5>{myClass.level}</h5>
+                 </div>
+
+                  
                   {/* <li>{myClass.answers.choice}</li> */}
-                 {myClass.answers[0] = undefined ? '': 
-                 <>
-                  <h5> {myClass.answers[0].choice} </h5>
-                   <h5>{myClass.answers[1].choice}</h5> 
-                   <button onClick = {()=>deleteChoice(myClass.answers[1].id)}>Delete</button> 
-                   <h5>{myClass.answers[2].choice}</h5> 
-                   <button onClick = {()=>deleteChoice(myClass.answers[2].id)}>Delete</button> 
-                   <h5>{myClass.answers[3].choice}</h5> 
-                   <button onClick = {()=>deleteChoice(myClass.answers[3].id)}>Delete</button> 
-                   <button onClick = {()=>deleteChoice(myClass.answers[0].id)}>Delete</button> 
-                  <button onClick= {()=>navigate(`/update/${myClass.id}`)} >Update</button>
-                  </>
-                }
+           
+                 <div className='choices-and-buttons'>
+                    <div className='choice-delete'>
+                    <h5> {myClass.answers[0].choice} </h5>
+                    <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[0].id)}></button></FaTrashAlt>
+                    </div>
+                    <div className='choice-delete'>
+                    <h5>{myClass.answers[1].choice}</h5> 
+                    <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[1].id)}>Delete</button></FaTrashAlt> 
+                    </div>
+                    <div className='choice-delete'>
+                    <h5>{myClass.answers[2].choice}</h5> 
+                    <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[2].id)}>Delete</button></FaTrashAlt> 
+                    </div>
+                    <div className='choice-delete'>
+                    <h5>{myClass.answers[3].choice}</h5> 
+                    <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[3].id)}>Delete</button></FaTrashAlt>
+                    </div> 
+                  {/* <button onClick= {()=>navigate(`/update/${myClass.id}`)} >Update</button> */}
+                  </div>
+                
+
                </div>
     })
 
     return (
-        <>
+        <div className='teacherItems'>
         {teacherItems}
-        <button onClick = {() =>navigate(`/teacher-post/${id}`)}>Back</button>
-        </>
+        {/* <button onClick = {() =>navigate(`/${id}`)}>Back</button> */}
+        </div>
     )
 
 
