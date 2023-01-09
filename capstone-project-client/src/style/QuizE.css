@@ -52,6 +52,11 @@ li {
   font-size: 35px;
 }
 
+li:hover{
+  background-color: rgb(52, 135, 230);
+  color: rgb(96, 7, 141);
+}
+
 .question-text {
   color: darkblue;
   font-size: 24px;
