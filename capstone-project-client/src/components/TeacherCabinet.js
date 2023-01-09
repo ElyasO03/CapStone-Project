@@ -70,6 +70,7 @@ function TeacherCabinet(props) {
      window.location.reload(false)
    }
     const teacherItems = teacher.map((myClass, index) =>{
+
         return <div className='question-and-choices' key ={index}>
                  <div className='question-and-choices-button'>
                     <button className = 'updateButton' onClick= {()=>navigate(`/update/${myClass.id}`)} ><IoIosCreate size={30}/>Update</button>
@@ -103,6 +104,7 @@ function TeacherCabinet(props) {
                   {/* <button onClick= {()=>navigate(`/update/${myClass.id}`)} >Update</button> */}
                   </div>
                 
+
                </div>
     })
 
