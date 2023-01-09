@@ -1,33 +1,43 @@
 .right-answer{
     background-color: green;
- }
+    display: grid;
+    grid-template-columns: 1fr;  
+    width: 500px;
+    border-radius: 10px;
+}
  
- .wrong-answer{
+.wrong-answer{
      background-color: red;
  
-  }
- .initial-answer{
+}
+.initial-answer{
      display: grid;
      grid-template-columns: 1fr;  
      width: 500px;
      background-color: rgb(39, 25, 82);
      border-radius: 10px;
+     font-family: 'Coda', cursive;
  }
- .choicesDiv{
+
+.initial-answer:hover{
+    background-color:  rgb(85, 30, 167);
+}
+.choicesDiv{
     width: 100%;
    
- }
- .questionItems{
+}
+.questionItems{
    width: 100%;
    display: grid;
-   
-
- }
- .question{
+}
+.question{
    display: grid;
    align-content: center;
    justify-content: center;
- }
+   font-family: 'Coda', cursive;
+   /* border-radius: 7px; */
+    color: rgb(10, 6, 95);
+}
 
  .choice{
     display: grid;
@@ -36,8 +46,9 @@
     row-gap: 18px;
     grid-template-rows: 50px 50px 50px 50px;
     grid-template-columns: 1fr;  
-    border: 5px groove grey;
+    border: 5px groove rgb(98, 154, 222);
     padding: 10px;
+    border-radius: 10px;
     
 }
  
@@ -48,19 +59,47 @@
 .mainContainerStudent {
     display: grid;
     justify-content: center;
+    
 }
 .questionAndAnswer{
     display: grid;
     width: 100%;
     justify-content: center;
     grid-template-columns: 1fr 1fr;
-    border: 5px groove grey;
+    border: 5px groove rgb(98, 154, 222);
     margin:5px;
+    border-radius: 13px;
 }
-
-/* .question{
-   
-} */
+.titleQuiz{
+    display: grid;
+    justify-content: end;
+    justify-items: end;
+    border-bottom: 2px groove rgb(10, 6, 95);
+    /* justify-content: center; */
+    /* border-right: 2px groove grey;
+    border-top: 2px groove grey;
+    border-bottom: 2px groove grey; */
+    /* border-bottom: 2px groove rgb(10, 6, 95); */
+    height: 70px;
+    padding: 5px; 
+    width: 250px;
+    font-family: 'Alumni Sans Inline One', cursive;
+    font-size: 65px;
+    color: rgb(10, 6, 95);
+    margin-left: 10px;
+  }
+.title-score{
+    display: grid;
+    justify-content: center;
+}
+  
+.score{
+    font-family: 'Orbitron', sans-serif;
+    color: rgb(10, 6, 95);
+    border: 5px groove  rgb(98, 154, 222);
+    margin: 10px;
+    padding: 5px;
+}
 
 .eachChoice{
     display: grid;

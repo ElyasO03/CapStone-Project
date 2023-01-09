@@ -161,21 +161,22 @@ function Quiz(props) {
     })
 
     return (
-        <div className="mainContainerStudent">
-            <div>
-                <h1>Quiz</h1>
+        <div>
 
-                <h2>Current score: {score}</h2>
-                {/* <CountDown seconds={179} /> */}
-            </div>
-            <div className="questionItems">
-                {questionItems}
-            </div>
-          
+            <h1 className="titleQuiz" >Big School</h1>
+            <div className="mainContainerStudent">
+                <div className="title-score">
+
                         
-                 
+                    
 
-
+                    <h2 className="score">Current score: {score}</h2>
+                    {/* <div className="score"><CountDown  seconds={179} /></div> */}
+                </div>
+                <div className="questionItems">
+                    {questionItems}
+                </div>
+            </div>
         </div>
     )
 }

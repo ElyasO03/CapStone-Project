@@ -2,8 +2,9 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: center;
-    border: 2px groove rgb(98, 154, 222);
+    /* border: 2px groove rgb(98, 154, 222); */
     width: 95%;
+    /* border-radius: 8px; */
 }
 .choices-and-buttons{
     display: grid;
@@ -13,8 +14,10 @@
 .question-and-choices{
     display: grid;
     justify-content: center;
-    border: 2px groove rgb(98, 154, 222);
+    border: 3px groove rgb(98, 154, 222);
     padding: 5px;
+    border-radius: 8px;
+    margin: 3px;
 }
 
 .question-and-choices-button{
@@ -25,20 +28,49 @@
 .choice-delete{
     display: grid;
     grid-template-columns: 2fr 1fr;
+    justify-content: center;
+    justify-items: center;
+    border: 1.5px dotted grey;
+    row-gap: 2px;
 
 }
 .trash{
-    color: red;
+    color: rgb(207, 11, 11);
+}
+.trash:hover{
+    color: rgba(247, 45, 45, 0.972);
 }
 .question-level{
     display: grid;
     grid-template-columns: 2fr 1fr;
+    border-radius: 7px;
+    font-family: 'Coda', cursive;
+    color: rgb(10, 6, 95);
+    justify-items: center;
+    margin: 7px;
+}
+.questionMain{
+    font-family: 'Coda', cursive;
+    color: rgb(10, 6, 95);
+    padding: 5px;
+}
+.choiceMain{
+    font-family: 'Coda', cursive;
+    color: rgb(10, 6, 95);
+    padding: 5px;
 }
 .updateButton{
     background-color: rgba(39, 19, 68, 0.714);
     border-radius: 20px;
 }
+.updateButton:hover{
+    background-color: rgba(41, 24, 108, 0.887);
+}
 .deleteButton{
     border-radius: 20px;
     background-color: rgba(182, 8, 8, 0.939);
+}
+
+.deleteButton:hover{
+    background-color: rgba(232, 12, 12, 0.939);
 }

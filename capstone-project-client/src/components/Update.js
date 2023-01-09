@@ -3,6 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import {NavLink} from "react-router-dom";
 // import { Checkbox } from 'react-input-checkbox'
 import { useParams } from 'react-router-dom';
+import '../style/update.css';
+import TeacherCabinet from './TeacherCabinet';
+import { BiArrowBack} from "react-icons/bi";
+import { CgDisplayGrid} from "react-icons/cg"
+import { MdOutlineCreate} from "react-icons/md"; 
+import { TiDelete} from "react-icons/ti"
 
 
 function TeacherPost() {  
@@ -99,47 +105,72 @@ const handleSubmit = (e) => {
         //         <button >Update</button>
         //     </form> 
         // </div>
-        <>
-        <form  onSubmit={handleSubmit}>
-                <label htmlFor="question"> 1. Create your question</label>
-                <br/>
-                <input id ="question"className='input' onChange = {handleChange} name = "question" type = "text" placeholder = "Create a question"  />
-                {/* <input className='input' onChange = {handleChange} name = "level" type = "text" placeholder = "What's a level of difficulty"  /> */}
-                <select onChange = {handleChange} name = "level">
-                    <option value="Easy">Easy</option>
-                    <option value ="Medium">Medium</option>
-                    <option value="Hard">Hard</option>
-                </select>
-                <br/>
-                <label htmlFor="choice"> 2. Create your choices</label>
-                <br/>
-                <input id ="choice"className='input' onChange = {handleChange} name = "choice1" type = "text" placeholder = "Enter first choice"  />
-                <label htmlFor="True">True</label>
-                <input htmlFor="True"className='input' onChange = {handleChange} name = "choice1TrueFalse" type = "checkbox" value={true} placeholder = "True" /> 
-                <label htmlFor="False">False</label>
-                <input id = "False" className='input' onChange = {handleChange} name = "choice1TrueFalse" type = "checkbox" value={false} />
-                <br />
-                <input className='input' onChange = {handleChange} name = "choice2" type = "text" placeholder = "Enter second choice"  />
-                <label htmlFor="True">True</label>
-                <input id = "True" className='input' onChange = {handleChange} name = "choice2TrueFalse" type = "checkbox" value={true}  />
-                <label htmlFor="False">False</label>
-                <input id = "False" className='input' onChange = {handleChange} name = "choice2TrueFalse" type = "checkbox" value={false}  />    
-                <br />
-                <input className='input' onChange = {handleChange} name = "choice3" type = "text" placeholder = "Enter thrid choice"  /> 
-                <label htmlFor="True">True</label>
-                <input id = "True" className='input' onChange = {handleChange} name = "choice3TrueFalse" type = "checkbox" value={true}  />
-                <label htmlFor="False">False</label>
-                <input id = "False" className='input' onChange = {handleChange} name = "choice3TrueFalse" type = "checkbox" value={false}  />    
-                <br />
-                <input className='input' onChange = {handleChange} name = "choice4" type = "text" placeholder = "Enter forth choice "  />
-                <label htmlFor="True">True</label>
-                <input id = "True" className='input' onChange = {handleChange} name = "choice4TrueFalse" type = "checkbox" value={true}  />
-                <label htmlFor="False">False</label>
-                <input id = "False" className='input' onChange = {handleChange} name = "choice4TrueFalse" type = "checkbox" value={false}  />       
-                <br/>
-                <button >Create a QUIZ</button>
-            </form> 
-        </>
+        <div className='majorContainerUpdate'>
+            <div className='postContainer'>
+                <h1 className='titleCreateQuiz'>Update question</h1> 
+                <form  onSubmit={handleSubmit}>
+                <div className='formClass'>
+                    <label className = 'label' htmlFor="question"> 1. Create your question</label>
+                    
+                    <input  id ="question"className='input' onChange = {handleChange} name = "question" type = "text" placeholder = "Create a question"  />
+                    {/* <input className='input' onChange = {handleChange} name = "level" type = "text" placeholder = "What's a level of difficulty"  /> */}
+                    <select className ='select' onChange = {handleChange} name = "level">
+                        <option className ='select' value="Easy">Easy</option>
+                        <option className ='select' value ="Medium">Medium</option>
+                        <option className ='select' value="Hard">Hard</option>
+                    </select>
+                    <label className = 'label' htmlFor="choice"> 2. Create your choices</label>
+                    
+                    <input  id ="choice"className='input' onChange = {handleChange} name = "choice1" type = "text" placeholder = "1. Enter first choice"  />
+                    <div className='TrueFalse'>
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer' htmlFor="True">True</label>
+                        <input  htmlFor="True"className='input' onChange = {handleChange} name = "choice1TrueFalse" type = "checkbox" value={true} placeholder = "True" /> 
+                        </div>
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer' htmlFor="False">False</label>
+                        <input  id = "False" className='input' onChange = {handleChange} name = "choice1TrueFalse" type = "checkbox" value={false} />
+                        </div>                   
+                    </div>
+                    
+                    <input className='input' onChange = {handleChange} name = "choice2" type = "text" placeholder = "2. Enter second choice"  />
+                    <div className='TrueFalse'>
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer'  htmlFor="True">True</label>
+                        <input  id = "True" className='input' onChange = {handleChange} name = "choice2TrueFalse" type = "checkbox" value={true}  />
+                        </div> 
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer' htmlFor="False">False</label>
+                        <input  id = "False" className='input' onChange = {handleChange} name = "choice2TrueFalse" type = "checkbox" value={false}  />    
+                        </div>
+                    </div>
+                    <input className='input' onChange = {handleChange} name = "choice3" type = "text" placeholder = "3. Enter thrid choice"  /> 
+                    <div className='TrueFalse'>
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer' htmlFor="True">True</label>
+                        <input  id = "True" className='input' onChange = {handleChange} name = "choice3TrueFalse" type = "checkbox" value={true}  />
+                        </div>
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer' htmlFor="False">False</label>
+                        <input  id = "False" className='input' onChange = {handleChange} name = "choice3TrueFalse" type = "checkbox" value={false}  />    
+                        </div>
+                    </div>
+                    <input className='input' onChange = {handleChange} name = "choice4" type = "text" placeholder = "4. Enter forth choice "  />
+                    <div className='TrueFalse'>
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer' htmlFor="True">True</label>
+                        <input  id = "True" className='input' onChange = {handleChange} name = "choice4TrueFalse" type = "checkbox" value={true}  />
+                        </div>
+                        <div className='TrueCheck'>
+                        <label className='trueAnswer' htmlFor="False">False</label>
+                        <input  id = "False" className='input' onChange = {handleChange} name = "choice4TrueFalse" type = "checkbox" value={false}  />       
+                        </div>
+                    </div>
+                    <button className='create-quiz'><MdOutlineCreate size={30}/>UPDATE</button>
+                    </div>
+                 </form> 
+            </div>
+        </div>
     )
    
 }

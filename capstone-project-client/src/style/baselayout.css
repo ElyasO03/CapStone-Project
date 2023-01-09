@@ -16,12 +16,12 @@
 .triangle2{
     width: 100%;
 
-	border-left: 900px solid transparent;
-	border-right: 900px solid transparent;
-	border-bottom: 25px solid  #a9d6e5;
+	border-left: 700px solid transparent;
+	border-right: 700px solid transparent;
+	border-bottom: 10px solid  #a9d6e5;
     margin-top: 10px;
 } 
 
 .baselayout{
-    background-color: #f0e6ef;
+    background-color: #f3eff3fa;
 }

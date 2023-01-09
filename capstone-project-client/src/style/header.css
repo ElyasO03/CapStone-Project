@@ -4,6 +4,8 @@
     /* margin-left: 60px; */
     /* background-color: #8da9c4; */
     background-color: #a9d6e5;
+    /* margin: 0;
+    padding: 0; */
     /* margin-bottom: 10px; */
  
    
@@ -11,9 +13,9 @@
 .triangle {
     width: 100%;
 
-	border-left: 900px solid transparent;
-	border-right: 900px solid transparent;
-	border-top: 25px solid  #a9d6e5;
+	border-left: 700px solid transparent;
+	border-right: 700px solid transparent;
+	border-top: 15px solid  #a9d6e5;
     margin-bottom: 10px;
 }
 
@@ -48,9 +50,11 @@
     width:8%;
     font-family: 'Alumni Sans Inline One', cursive;
     margin-right: 12px;
+    
 
 }
 .name{
+    width: 100%;
     display: grid;
     color: rgb(10, 6, 95);
     justify-content: center;
@@ -72,7 +76,7 @@
     font: bolder;
     font-size: x-large;
     font-weight:bolder;
-    color: rgba(39, 19, 68, 0.714);
+    color:  rgb(75, 39, 182);
 }
 .logoutSign:hover{
      color: rgb(177, 8, 42);
@@ -82,11 +86,11 @@
     font-weight:900;
     padding: 15px;
     font-family: 'Coda', cursive;
-    color: rgba(39, 19, 68, 0.882);
+    color:  rgb(42, 16, 120);;
 
 }
 .navButton {
-    background-color: rgba(39, 19, 68, 0.714);
+    background-color: rgb(54, 19, 158);
     width: 80%;
     border: 1px groove rgb(110, 106, 106);
     border-radius: 10px;
@@ -99,7 +103,7 @@
 .links {
     display: grid;
     justify-content: center;
-    color: antiquewhite;
+    color: rgb(245, 242, 237);
 }
 
 .signoutContainer{
@@ -127,8 +131,7 @@
     /* font-family: 'Alumni Sans Inline One', cursive; */
     font-family: 'Rampart One', cursive;
     font-size: 35px;
-    color:  rgba(39, 19, 68, 0.714);
-    font-weight: 800;
+    color: rgb(45, 12, 142);
 }
 
 .navToggleButton{
@@ -141,6 +144,14 @@
 }
 .navToggleButton:hover {
     color:rgb(177, 8, 42)
+}
+
+@media  (max-width: 480px) {
+   
+}
+@media (max-width: 767px ){
+
+   
 }
 
 

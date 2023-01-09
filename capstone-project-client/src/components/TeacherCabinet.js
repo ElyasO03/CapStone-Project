@@ -77,8 +77,8 @@ function TeacherCabinet(props) {
                     <button className = 'deleteButton'onClick={()=>deleteQuestion(myClass)}>Delete Question<TiDelete size={30}/></button> 
                  </div>
                  <div className='question-level'>
-                 <h3>{myClass.question}</h3>
-                 <h5>{myClass.level}</h5>
+                 <h3 className='questionMain'>{myClass.question}</h3>
+                 <h3 className='questionMain'>{myClass.level}</h3>
                  </div>
 
                   
@@ -86,19 +86,19 @@ function TeacherCabinet(props) {
            
                  <div className='choices-and-buttons'>
                     <div className='choice-delete'>
-                    <h5> {myClass.answers[0].choice} </h5>
+                    <h5 className='choiceMain'> {myClass.answers[0].choice} </h5>
                     <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[0].id)}></button></FaTrashAlt>
                     </div>
                     <div className='choice-delete'>
-                    <h5>{myClass.answers[1].choice}</h5> 
+                    <h5 className='choiceMain'>{myClass.answers[1].choice}</h5> 
                     <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[1].id)}>Delete</button></FaTrashAlt> 
                     </div>
                     <div className='choice-delete'>
-                    <h5>{myClass.answers[2].choice}</h5> 
+                    <h5 className='choiceMain'>{myClass.answers[2].choice}</h5> 
                     <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[2].id)}>Delete</button></FaTrashAlt> 
                     </div>
                     <div className='choice-delete'>
-                    <h5>{myClass.answers[3].choice}</h5> 
+                    <h5 className='choiceMain'>{myClass.answers[3].choice}</h5> 
                     <FaTrashAlt className='trash' size={25}><button onClick = {()=>deleteChoice(myClass.answers[3].id)}>Delete</button></FaTrashAlt>
                     </div> 
                   {/* <button onClick= {()=>navigate(`/update/${myClass.id}`)} >Update</button> */}
