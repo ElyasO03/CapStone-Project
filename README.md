@@ -2,7 +2,7 @@
 <div align="center">
 
 
-  <h3 align="center">CapStone Project</h3>
+  <h3 align="center">CoderTrivia Project</h3>
 
   <p align="center">
    This quiz application is designed for web developers to test their knowledge!
@@ -12,8 +12,10 @@
     <br />
     ·
     <div>
-      <a href="#">View Demo</a>
-      <img src='./home1.png'>
+     <h4>CoderTrivia</h4>
+      <img src='./CapstoneHome.png'>
+      <img src='./Capstone1.png'>
+      <img src='./Capstone3.png'>
     </div>
    
     ·
@@ -23,21 +25,19 @@
 
 ## About the Project
   
-###### This application was designed to allow web developers to test their knowledge, and teachers to create new quizzes for their students. There are three difficulty levels to choose from: easy, medium, and hard. At the end of the quiz, the user will be able to see the percentage of questions that were answered correctly. 
+###### Welcome to our interactive quiz platform for web developers! With this application, you can test your knowledge and skills in web development, and even create your own quizzes to share with your students or peers. Whether you are looking for a challenge or just want to brush up on your fundamentals, we have three difficulty levels to choose from: easy, medium, and hard. At the end of each quiz, you will receive a score report showing the percentage of questions that you answered correctly. Whether you are a beginner or an experienced developer, we hope this platform will help you grow and succeed in your field.
 
 ## Built With
 * React
 * Redux
 * Sequelize
+* PostgreSQL
 * Express
 * Axios
-* Bootstrap
 * Bcrypt
 * JavaScript
-* Bootstrap
-* PostgreSQL
 * CSS
-* Rest APIs
+* Bootstrap
 
 
 <!-- CONTACT -->
