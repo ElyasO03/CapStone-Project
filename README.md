@@ -12,7 +12,7 @@
     <br />
     ·
     <div>
-     <h4>Capstone</h4>
+     <h4>CoderTrivia</h4>
       <img src='./CapstoneHome.png'>
       <img src='./Capstone1.png'>
       <img src='./Capstone3.png'>
