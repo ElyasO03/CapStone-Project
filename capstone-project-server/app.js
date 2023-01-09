@@ -4,13 +4,14 @@ const cors = require('cors')
 const models = require('./models')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+require('dotenv').config()
 // const authenticate = require('./middlewares/authMiddleware')
 
 app.use(cors())
 app.use(express.json())
 
 app.get('/token', (req, res) => {
-    const token = jwt.sign({}, 'QuizAppSuperSecretKey')
+    const token = jwt.sign({}, "QuizAppSuperSecretKey")
     res.json({ token: token})
 })
 

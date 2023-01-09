@@ -153,3 +153,11 @@ button {
   justify-content: center;
   align-items: center;
 }
+
+.textct {
+  font-family: 'Orbitron', sans-serif;
+  color: rgb(10, 6, 95);
+  border: 5px groove  rgb(98, 154, 222);
+  margin: 10px;
+  padding: 5px;
+}

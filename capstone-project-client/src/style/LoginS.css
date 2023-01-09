@@ -34,7 +34,7 @@
 	width: 380px;
 	height: 420px;
 	transform-origin: bottom right;
-	background: linear-gradient(0deg,transparent,#45f3ff,#45f3ff);
+	background: linear-gradient(0deg,transparent,blue,blue);
 	animation: animate 6s linear infinite;
 }
 .box::after 
@@ -47,7 +47,7 @@
 	width: 380px;
 	height: 420px;
 	transform-origin: bottom right;
-	background: linear-gradient(0deg,transparent,aqua, aqua);
+	background: linear-gradient(0deg,transparent,darkblue, darkblue);
 	animation: animate 6s linear infinite;
 	animation-delay: -3s;
 }
