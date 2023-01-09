@@ -12,8 +12,10 @@
     <br />
     ·
     <div>
-      <a href="#">View Demo</a>
-      <img src='./home1.png'>
+     <h4>Capstone</h4>
+      <img src='./Capstone1.png'>
+      <img src='./Capstone2.png'>
+      <img src='./Capstone3.png'>
     </div>
    
     ·
