@@ -53,6 +53,8 @@ const options = [
                 </button>
                 <div className='nameContainer'> <NavLink to = "/" style={{ textDecoration: 'none' }}><h2 className='name'><SiNintendogamecube size={55}/>CoderTrivia</h2></NavLink></div>
                 { props.isAuth ? <div className='welcome'><h6 className='userNav'> User: {user}</h6> <h6 className='statusNav'>Status: {role}</h6></div>: null  }     
+                {/* <div className='triangle'>
+              </div> */}
             </div>
              <div className='triangle'>
               </div>

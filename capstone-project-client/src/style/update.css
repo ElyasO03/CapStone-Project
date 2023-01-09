@@ -52,10 +52,10 @@
     color: rgb(10, 6, 95);
 }
 
-.majorContainer{
+.majorContainerUpdate{
     display: grid;
     justify-content: center;
-    grid-template-columns: 1fr 2fr;
+   
 }
 
 .display{
