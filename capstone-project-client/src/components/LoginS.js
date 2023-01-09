@@ -61,7 +61,7 @@ function LoginS(props) {
                         <h2>Login</h2>
                         <div className='inputBox'>
                             <input minLength={4} maxLength={30} onChange={handleOnChange} name="email" type="text" required="required" />
-                            <span>email</span>
+                            <span>Email</span>
                             <i></i>
                         </div>
                         <div className='inputBox'>
