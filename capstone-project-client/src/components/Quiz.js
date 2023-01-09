@@ -130,11 +130,11 @@ function Quiz(props) {
     // }
 
 
-    const questionItems = questions.filter(questions => questions.level === 'easy','Medium', 'Hard').map(question => {
+    const questionItems = questions.filter(questions => questions.level === 'Easy' || questions.level === 'Medium' || questions.level === 'Hard').map(question => {
 
         const choiceItems = question.answers.map(answer => {
             let lvl = question.level
-            if(lvl === 'easy', 'Medium','Hard'){
+            if(lvl === 'Easy' || lvl === 'Medium' || lvl === 'Hard'){
             }
             return (
                 <>
