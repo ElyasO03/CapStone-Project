@@ -25,6 +25,7 @@
   color: white;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
     rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+    border-color: darkblue;
 }
 
 ul {
@@ -34,7 +35,7 @@ ul {
 
 li {
   margin-top: 8px;
-  background-color: darkgray;
+  background-color: lightblue;
   padding: 20px;
   border: 3px solid white;
   border-radius: 20px;
@@ -45,6 +46,10 @@ li {
   margin-bottom: 20px;
   list-style: none;
   text-decoration: none;
+  color: darkblue;
+  border-color: darkblue;
+  font-family: 'Alumni Sans Inline One', cursive;
+  font-size: 35px;
 }
 
 .question-text {
@@ -90,17 +95,55 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: blue;
+  color: darkblue;
   margin-bottom: 20px;
+  font-family: 'Coda', cursive;
 }
 
 .questionb {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Coda', cursive;
+  font-size: 35px;
 }
 
-.centert {
+.centertr {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: green;
+  margin-bottom: 10px;
+}
+
+.centertw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.textc {
+  color: darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Apple Chancery, cursive;
+}
+
+.textcr {
+  font-family: 'Rampart One', cursive;
+  color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonr {
   display: flex;
   justify-content: center;
   align-items: center;

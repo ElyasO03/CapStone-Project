@@ -167,16 +167,16 @@ function QuizH() {
                 <button onClick={() => restartGame()}>Restart Game</button>
             </div>
                 {rightAnswers.length <=0 ? 'No right answers' : rightAnswers.map(answer=>{
-                    return <div className="centert">RIGHT: {answer.text}</div>
+                    return <div className="centertr">RIGHT: {answer.text}</div>
                 })}
                 {wrongAnswers.length <=0 ? 'No wrong answers' : wrongAnswers.map(answer=>{
-                    return <div className="centert">WRONG: {answer.text}</div>
+                    return <div className="centertw">WRONG: {answer.text}</div>
                 })}
             </>
             ) : (
             <>
-                <h2>Hard Programmer Quiz</h2>
-                <h2>Current Score: {score}</h2>
+                <h2 className="textc">Hard Programmer Quiz</h2>
+                <h2 className="textc">Current Score: {score}</h2>
                 <CountDown seconds={149} />
                 <h1 className="questionb">{shuffledQuestions[questionsLeft].text}</h1>
                 <ul>
