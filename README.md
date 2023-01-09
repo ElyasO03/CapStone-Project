@@ -13,8 +13,8 @@
     ·
     <div>
      <h4>Capstone</h4>
+      <img src='./CapstoneHome.png'>
       <img src='./Capstone1.png'>
-      <img src='./Capstone2.png'>
       <img src='./Capstone3.png'>
     </div>
    
