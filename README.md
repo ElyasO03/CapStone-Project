@@ -2,7 +2,7 @@
 <div align="center">
 
 
-  <h3 align="center">CapStone Project</h3>
+  <h3 align="center">CoderTrivia Project</h3>
 
   <p align="center">
    This quiz application is designed for web developers to test their knowledge!
@@ -12,8 +12,10 @@
     <br />
     ·
     <div>
-      <a href="#">View Demo</a>
-      <img src='./home1.png'>
+     <h4>CoderTrivia</h4>
+      <img src='./CapstoneHome.png'>
+      <img src='./Capstone1.png'>
+      <img src='./Capstone3.png'>
     </div>
    
     ·
