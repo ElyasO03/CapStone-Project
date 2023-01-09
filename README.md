@@ -31,15 +31,13 @@
 * React
 * Redux
 * Sequelize
+* PostgreSQL
 * Express
 * Axios
-* Bootstrap
 * Bcrypt
 * JavaScript
-* Bootstrap
-* PostgreSQL
 * CSS
-* Rest APIs
+* Bootstrap
 
 
 <!-- CONTACT -->
