@@ -10,7 +10,6 @@
     <hr>
     <br />
     <br />
-    ·
     <div>
      <h4>CoderTrivia</h4>
       <img src='./CapstoneHome.png'>
